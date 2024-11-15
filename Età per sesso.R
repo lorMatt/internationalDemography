@@ -130,13 +130,13 @@ it00gg + um00gg + it24gg + um24gg +
 #### 2024
 etaMed <- it24 |> 
   group_by(Sesso) |> 
-  summarise(media = sum(`Età` * `Tot per genere`)/sum(`Tot per genere`)) |> 
+  summarise(etaMed = sum(`Età` * `Tot per genere`)/sum(`Tot per genere`)) |> 
   mutate(anno = 2024, geo = 'Italia')
 
 #### 2000
 etaMed <- it00 |> 
   group_by(Sesso) |> 
-  summarise(media = sum(`Età` * `2000`)/sum(`2000`)) |> 
+  summarise(etaMed = sum(`Età` * `2000`)/sum(`2000`)) |> 
   mutate(anno = 2000, geo = 'Italia') |> 
   bind_rows(etaMed)
 
@@ -144,23 +144,22 @@ etaMed <- it00 |>
 ### 2024
 etaMed <- um24 |> 
   group_by(Sesso) |> 
-  summarise(media = sum(`Età` * `Tot per genere`)/sum(`Tot per genere`)) |> 
+  summarise(etaMed = sum(`Età` * `Tot per genere`)/sum(`Tot per genere`)) |> 
   mutate(anno = 2024, geo = 'Umbria') |> 
   bind_rows(etaMed)
 
 ### 2000
 etaMed <- um00 |> 
   group_by(Sesso) |> 
-  summarise(media = sum(`Età` * `2000`)/sum(`2000`)) |> 
+  summarise(etaMed = sum(`Età` * `2000`)/sum(`2000`)) |> 
   mutate(anno = 2000, geo = 'Umbria') |> 
   bind_rows(etaMed)
-
 
 ### Dataviz ----
 #### ggbump
 etaMedgg <- etaMed |> 
   filter(Sesso != 'Totale') |> 
-  ggplot(aes(x = anno, y = media, col = Sesso, shape = geo, dataID = Sesso, tooltip = round(media, 2))) +
+  ggplot(aes(x = anno, y = etaMed, col = Sesso, shape = geo, dataID = Sesso, tooltip = round(etaMed, 2))) +
   geom_bump(data = ~. |> filter(geo == 'Umbria'),
             linetype = 'dotdash',
             linewidth = .9) +
@@ -180,7 +179,7 @@ etaMedgg <- etaMed |>
 
 #### gt
 etaMedGt <- etaMed |> 
-  pivot_wider(names_from = Sesso, values_from = media) |> 
+  pivot_wider(names_from = Sesso, values_from = etaMed) |> 
   gt()
 
 #### patchwork
@@ -244,13 +243,13 @@ indDip <- it00 |>
 #### Umbria
 indDipGiov <- um24 |> 
   filter(Sesso == 'Totale') |> 
-  summarise(dip = (colSums(um24 |> filter(Sesso == 'Totale' & Età < 15) |> select(`Tot per genere`))/ 
+  summarise(dipGiov = (colSums(um24 |> filter(Sesso == 'Totale' & Età < 15) |> select(`Tot per genere`))/ 
               colSums(um24 |> filter(Sesso == 'Totale' & Età %in% c(15:64) ) |> select(`Tot per genere`)))) |> 
   mutate(anno = 2024,
          geo = 'Umbria')
 indDipGiov <- um00 |> 
   filter(Sesso == 'Totale') |> 
-  summarise(dip = (colSums(um00 |> filter(Sesso == 'Totale' & Età < 15) |> select(`2000`))/
+  summarise(dipGiov = (colSums(um00 |> filter(Sesso == 'Totale' & Età < 15) |> select(`2000`))/
               colSums(um00 |> filter(Sesso == 'Totale' & Età %in% c(15:64) ) |> select(`2000`)))) |> 
   mutate(anno = 2000,
          geo = 'Umbria') |> 
@@ -259,7 +258,7 @@ indDipGiov <- um00 |>
 #### Italia
 indDipGiov <- it24 |> 
   filter(Sesso == 'Totale') |> 
-  summarise(dip = (colSums(it24 |> filter(Sesso == 'Totale' & Età < 15) |> select(`Tot per genere`)))/
+  summarise(dipGiov = (colSums(it24 |> filter(Sesso == 'Totale' & Età < 15) |> select(`Tot per genere`)))/
               colSums(it24 |> filter(Sesso == 'Totale' & Età %in% c(15:64) ) |> select(`Tot per genere`))) |> 
   mutate(anno = 2024,
          geo = 'Italia') |> 
@@ -267,7 +266,7 @@ indDipGiov <- it24 |>
 
 indDipGiov <- it00 |> 
   filter(Sesso == 'Totale') |> 
-  summarise(dip = (colSums(it00 |> filter(Sesso == 'Totale' & Età < 15) |> select(`2000`)))/
+  summarise(dipGiov = (colSums(it00 |> filter(Sesso == 'Totale' & Età < 15) |> select(`2000`)))/
               colSums(it00 |> filter(Sesso == 'Totale' & Età %in% c(15:64) ) |> select(`2000`))) |> 
   mutate(anno = 2000,
          geo = 'Italia') |> 
@@ -277,13 +276,13 @@ indDipGiov <- it00 |>
 #### Umbria
 indDipVec <- um24 |> 
   filter(Sesso == 'Totale') |> 
-  summarise(dip = (colSums(um24 |> filter(Sesso == 'Totale' & Età > 64) |> select(`Tot per genere`))/ 
+  summarise(dipVec = (colSums(um24 |> filter(Sesso == 'Totale' & Età > 64) |> select(`Tot per genere`))/ 
                      colSums(um24 |> filter(Sesso == 'Totale' & Età %in% c(15:64) ) |> select(`Tot per genere`)))) |> 
   mutate(anno = 2024,
          geo = 'Umbria')
 indDipVec <- um00 |> 
   filter(Sesso == 'Totale') |> 
-  summarise(dip = (colSums(um00 |> filter(Sesso == 'Totale' & Età > 64) |> select(`2000`))/
+  summarise(dipVec = (colSums(um00 |> filter(Sesso == 'Totale' & Età > 64) |> select(`2000`))/
                      colSums(um00 |> filter(Sesso == 'Totale' & Età %in% c(15:64) ) |> select(`2000`)))) |> 
   mutate(anno = 2000,
          geo = 'Umbria') |> 
@@ -292,7 +291,7 @@ indDipVec <- um00 |>
 #### Italia
 indDipVec <- it24 |> 
   filter(Sesso == 'Totale') |> 
-  summarise(dip = (colSums(it24 |> filter(Sesso == 'Totale' & Età > 64) |> select(`Tot per genere`)))/
+  summarise(dipVec = (colSums(it24 |> filter(Sesso == 'Totale' & Età > 64) |> select(`Tot per genere`)))/
               colSums(it24 |> filter(Sesso == 'Totale' & Età %in% c(15:64) ) |> select(`Tot per genere`))) |> 
   mutate(anno = 2024,
          geo = 'Italia') |> 
@@ -300,7 +299,7 @@ indDipVec <- it24 |>
 
 indDipVec <- it00 |> 
   filter(Sesso == 'Totale') |> 
-  summarise(dip = (colSums(it00 |> filter(Sesso == 'Totale' & Età > 64) |> select(`2000`)))/
+  summarise(dipVec = (colSums(it00 |> filter(Sesso == 'Totale' & Età > 64) |> select(`2000`)))/
               colSums(it00 |> filter(Sesso == 'Totale' & Età %in% c(15:64) ) |> select(`2000`))) |> 
   mutate(anno = 2000,
          geo = 'Italia') |> 
@@ -311,13 +310,13 @@ indDipVec <- it00 |>
 #### Umbria
 indVec <- um24 |> 
   filter(Sesso == 'Totale') |> 
-  summarise(dip = (colSums(um24 |> filter(Sesso == 'Totale' & Età > 64) |> select(`Tot per genere`))/ 
+  summarise(vec = (colSums(um24 |> filter(Sesso == 'Totale' & Età > 64) |> select(`Tot per genere`))/ 
                      colSums(um24 |> filter(Sesso == 'Totale' & Età < 15) |> select(`Tot per genere`)))) |> 
   mutate(anno = 2024,
          geo = 'Umbria')
 indVec <- um00 |> 
   filter(Sesso == 'Totale') |> 
-  summarise(dip = (colSums(um00 |> filter(Sesso == 'Totale' & Età > 64) |> select(`2000`))/
+  summarise(vec = (colSums(um00 |> filter(Sesso == 'Totale' & Età > 64) |> select(`2000`))/
                      colSums(um00 |> filter(Sesso == 'Totale' & Età < 15) |> select(`2000`)))) |> 
   mutate(anno = 2000,
          geo = 'Umbria') |> 
@@ -326,7 +325,7 @@ indVec <- um00 |>
 #### Italia
 indVec <- it24 |> 
   filter(Sesso == 'Totale') |> 
-  summarise(dip = (colSums(it24 |> filter(Sesso == 'Totale' & Età > 64) |> select(`Tot per genere`)))/
+  summarise(vec = (colSums(it24 |> filter(Sesso == 'Totale' & Età > 64) |> select(`Tot per genere`)))/
               colSums(it24 |> filter(Sesso == 'Totale' & Età < 15) |> select(`Tot per genere`))) |> 
   mutate(anno = 2024,
          geo = 'Italia') |> 
@@ -334,9 +333,25 @@ indVec <- it24 |>
 
 indVec <- it00 |> 
   filter(Sesso == 'Totale') |> 
-  summarise(dip = (colSums(it00 |> filter(Sesso == 'Totale' & Età > 64) |> select(`2000`)))/
+  summarise(vec = (colSums(it00 |> filter(Sesso == 'Totale' & Età > 64) |> select(`2000`)))/
               colSums(it00 |> filter(Sesso == 'Totale' & Età < 15) |> select(`2000`))) |> 
   mutate(anno = 2000,
          geo = 'Italia') |> 
   bind_rows(indVec)
 
+## Join ----
+etadf <- full_join(indDip, indDipGiov) |> 
+  full_join(indDipVec) |> 
+  full_join(indVec) |> 
+  full_join(etaMed |>
+              pivot_wider(names_from = `Sesso`,
+                          values_from = etaMed,
+                          names_prefix = 'etaMed_')) |> 
+  select(anno, geo, etaMed_F, etaMed_M, etaMed_Totale, dipGiov, dipVec, dip, vec)
+
+# Data export ----
+write_rds(it00, 'Dati/Export/it00.rds')
+write_rds(it24, 'Dati/Export/it24.rds')
+write_rds(um00, 'Dati/Export/um00.rds')
+write_rds(um24, 'Dati/Export/um24.rds')
+write_rds(etadf, 'Dati/Export/etadf.rds')

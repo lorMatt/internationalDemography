@@ -5,9 +5,10 @@
 * it00/it24
 * um00/um24
 ### Indici
-* EtaMed
-* IndDip(-Giov/-Vec)
-* IndVec
+* etadf
 
 ## Indicatori:
-* umdf/umtf
+* inddf
+
+## Fecondità:
+* fecdf

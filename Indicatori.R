@@ -1,6 +1,6 @@
 if (!require("pacman")) install.packages("pacman")
 library(pacman)
-p_load(tidyverse, readxl, plotly)
+p_load(tidyverse, readxl, plotly, ggplot2)
 
 # Importazione dati ------------------------------------------------------------
 nat <- read_excel("Dati/Indicatori_demografici.xls", 
@@ -53,10 +53,11 @@ colnames(umdf2) <- umdf$geo # nomi variabili
 umdf <- umdf2
 rm(umdf2)
 umdf <- rownames_to_column(umdf, var = 'anno')
-umdf$anno <- dmy(sprintf("01-01-%s",umdf$anno))
+# umdf$anno <- dmy(sprintf("01-01-%s",umdf$anno))
 
 umts <- umdf |> 
-  pivot_longer(cols = 2:7, names_to = 'var')
+  pivot_longer(cols = 2:7, names_to = 'var') |> 
+  mutate(Territorio = 'Umbria')
 
 ## Tibble Italia (merge) -------------------------------------------------------
 itdf <- nat |>
@@ -89,56 +90,26 @@ colnames(itdf2) <- itdf$geo # nomi variabili
 itdf <- itdf2
 rm(itdf2)
 itdf <- rownames_to_column(itdf, var = 'anno')
-itdf$anno <- dmy(sprintf("01-01-%s",itdf$anno))
+# itdf$anno <- dmy(sprintf("01-01-%s",itdf$anno))
 
 itts <- itdf |> 
-  pivot_longer(cols = 2:7, names_to = 'var')
+  pivot_longer(cols = 2:7, names_to = 'var') |> 
+  mutate(Territorio = 'Italia')
+
+## Tibble finale (join) ----
+inddf <- full_join(umts, itts) |> 
+  mutate(anno = as.numeric(
+    gsub('2023*', '2023', anno, fixed = T)))
+rm(itts, itdf, umts, umdf)
 
 # Dataviz ----------------------------------------------------------------------
 ## Natalità e mortalità ----
-### Umbria ----
-umts |>
+inddf |>
   filter(var == 'Quoziente di mortalità' | var == 'Quoziente di natalità' | var == 'Crescita naturale') |> 
   ggplot(aes(x = anno, y = value, col = var)) +
   geom_line() +
   geom_hline(yintercept = 0, col = 'gray60') +
-  theme(legend.position = 'bottom',
-        panel.background = element_blank(),
-        panel.grid = element_line(colour = 'gray90'),
-        legend.title = element_blank(),
-        axis.ticks = element_blank(),
-        axis.title = element_blank())
-### Italia ----
-itts |>
-  filter(var == 'Quoziente di mortalità' | var == 'Quoziente di natalità' | var == 'Crescita naturale') |> 
-  ggplot(aes(x = anno, y = value, col = var)) +
-  geom_line() +
-  geom_hline(yintercept = 0, col = 'gray60') +
-  theme(legend.position = 'bottom',
-        panel.background = element_blank(),
-        panel.grid = element_line(colour = 'gray90'),
-        legend.title = element_blank(),
-        axis.ticks = element_blank(),
-        axis.title = element_blank())
-## Migrazione ----
-### Umbria ----
-umts |> 
-  filter(var == 'Saldo migratorio con l\'estero' | var == 'Saldo migratorio interno' | var == 'Saldo migratorio') |> 
-  ggplot(aes(x = anno, y = value, col = var)) +
-  geom_line() +
-  geom_hline(yintercept = 0, col = 'gray60') +
-  theme(legend.position = 'bottom',
-        panel.background = element_blank(),
-        panel.grid = element_line(colour = 'gray90'),
-        legend.title = element_blank(),
-        axis.ticks = element_blank(),
-        axis.title = element_blank())
-### Italia ----
-itts |> 
-  filter(var == 'Saldo migratorio con l\'estero' | var == 'Saldo migratorio interno' | var == 'Saldo migratorio') |> 
-  ggplot(aes(x = anno, y = value, col = var)) +
-  geom_line() +
-  geom_hline(yintercept = 0, col = 'gray60') +
+  facet_wrap(~Territorio) +
   theme(legend.position = 'bottom',
         panel.background = element_blank(),
         panel.grid = element_line(colour = 'gray90'),
@@ -146,3 +117,19 @@ itts |>
         axis.ticks = element_blank(),
         axis.title = element_blank())
 
+## Migrazione ----
+inddf |> 
+  filter(var == 'Saldo migratorio con l\'estero' | var == 'Saldo migratorio interno' | var == 'Saldo migratorio') |> 
+  ggplot(aes(x = anno, y = value, col = var)) +
+  geom_line() +
+  geom_hline(yintercept = 0, col = 'gray60') +
+  facet_wrap(~Territorio) +
+  theme(legend.position = 'bottom',
+        panel.background = element_blank(),
+        panel.grid = element_line(colour = 'gray90'),
+        legend.title = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title = element_blank())
+
+# Data export ----
+write_rds(inddf, 'Dati/Export/inddf.rds')
