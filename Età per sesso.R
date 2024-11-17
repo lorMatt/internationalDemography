@@ -197,8 +197,52 @@ girafe(ggobj = (etaMedgg / etaMedGt),
          opts_hover(css = ''),
          opts_toolbar(position = 'bottomleft'),
          opts_zoom(min = .7, max = 6)))
-## Rapporto di mascolinità ----
 
+## Rapporto di mascolinità ----
+### Umbria ----
+rapMasc <- um24 |> 
+  filter(Sesso != 'Totale') |> 
+  group_by(Sesso) |> 
+  summarise(pop = sum(`Tot per genere`)) |> 
+  pivot_wider(names_from = Sesso, values_from = pop) |> 
+  mutate(rapMasc = 100*(`M`/`F`),
+         anno = 2024,
+         geo = 'Umbria') |> 
+  select(anno, geo, rapMasc)
+
+rapMasc <- um00 |> 
+  filter(Sesso != 'Totale') |> 
+  group_by(Sesso) |> 
+  summarise(pop = sum(`2000`)) |> 
+  pivot_wider(names_from = Sesso, values_from = pop) |> 
+  mutate(rapMasc = 100*(`M`/`F`),
+         anno = 2000,
+         geo = 'Umbria') |> 
+  select(anno, geo, rapMasc) |> 
+  bind_rows(rapMasc)
+
+## Italia ----
+rapMasc <- it24 |> 
+  filter(Sesso != 'Totale') |> 
+  group_by(Sesso) |> 
+  summarise(pop = sum(`Tot per genere`)) |> 
+  pivot_wider(names_from = Sesso, values_from = pop) |> 
+  mutate(rapMasc = 100*(`M`/`F`),
+         anno = 2024,
+         geo = 'Italia') |> 
+  select(anno, geo, rapMasc) |> 
+  bind_rows(rapMasc)
+
+rapMasc <- it00 |> 
+  filter(Sesso != 'Totale') |> 
+  group_by(Sesso) |> 
+  summarise(pop = sum(`2000`)) |> 
+  pivot_wider(names_from = Sesso, values_from = pop) |> 
+  mutate(rapMasc = 100*(`M`/`F`),
+         anno = 2000,
+         geo = 'Italia') |> 
+  select(anno, geo, rapMasc) |> 
+  bind_rows(rapMasc)
 
 ## Indici di dipendenza ----
 
@@ -343,11 +387,12 @@ indVec <- it00 |>
 etadf <- full_join(indDip, indDipGiov) |> 
   full_join(indDipVec) |> 
   full_join(indVec) |> 
+  full_join(rapMasc) |> 
   full_join(etaMed |>
               pivot_wider(names_from = `Sesso`,
                           values_from = etaMed,
                           names_prefix = 'etaMed_')) |> 
-  select(anno, geo, etaMed_F, etaMed_M, etaMed_Totale, dipGiov, dipVec, dip, vec)
+  select(anno, geo, etaMed_F, etaMed_M, etaMed_Totale, dipGiov, dipVec, dip, vec, rapMasc)
 
 # Data export ----
 write_rds(it00, 'Dati/Export/it00.rds')
