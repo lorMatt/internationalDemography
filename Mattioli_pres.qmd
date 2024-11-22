@@ -272,8 +272,7 @@ girafe(ggobj = etadf |>
                       background:rgba(255, 255, 255, 0.8);'),
          opts_hover(css = ''),
          opts_hover_inv(css = "opacity:0.3;"),
-         opts_toolbar(position = 'bottomleft'),
-         opts_zoom(min = .7, max = 6)))
+         opts_toolbar(hidden = c('selection', 'zoom', 'misc'))))
 ```
 
 ## Indici di dipendenza
@@ -325,8 +324,7 @@ girafe(ggobj = etadf |>
                       background:rgba(255, 255, 255, 0.8);'),
          opts_hover(css = ''),
          opts_hover_inv(css = "opacity:0.3;"),
-         opts_toolbar(position = 'bottomleft'),
-         opts_zoom(min = .7, max = 6)))
+         opts_toolbar(hidden = c('selection', 'zoom', 'misc'))))
 ```
 
 # Migrazioni
@@ -375,8 +373,7 @@ girafe(ggobj = inddf |>
                       background:rgba(255, 255, 255, 0.8);'),
          opts_hover(css = ''),
          opts_hover_inv(css = "opacity:0.3;"),
-         opts_toolbar(position = 'bottomleft'),
-         opts_zoom(min = .7, max = 6)))
+         opts_toolbar(hidden = c('selection', 'zoom', 'misc'))))
 ```
 
 # Fecondità
@@ -421,8 +418,7 @@ girafe(ggobj = fecdf |>
                       border-radius:10px;
                       background:rgba(255, 255, 255, 0.8);'),
          opts_hover(css = ''),
-         opts_toolbar(position = 'bottomleft'),
-         opts_zoom(min = .7, max = 6)))
+         opts_toolbar(hidden = c('selection', 'zoom', 'misc'))))
 
 ```
 
@@ -464,8 +460,7 @@ girafe(ggobj = fecdf |>
                       border-radius:10px;
                       background:rgba(255, 255, 255, 0.8);'),
          opts_hover(css = ''),
-         opts_toolbar(position = 'bottomleft'),
-         opts_zoom(min = .7, max = 6)))
+         opts_toolbar(hidden = c('selection', 'zoom', 'misc'))))
 
 ```
 
@@ -501,8 +496,7 @@ girafe(ggobj = FX |>
                       border-radius:10px;
                       background:rgba(255, 255, 255, 0.8);'),
          opts_hover(css = ''),
-         opts_toolbar(position = 'bottomleft'),
-         opts_zoom(min = .7, max = 6)))
+         opts_toolbar(hidden = c('selection', 'zoom', 'misc'))))
 ```
 
 # Mortalità
@@ -544,8 +538,7 @@ girafe(ggobj = inddf |>
                       background:rgba(255, 255, 255, 0.8);'),
          opts_hover(css = ''),
          opts_hover_inv(css = "opacity:0.3;"),
-         opts_toolbar(position = 'bottomleft'),
-         opts_zoom(min = .7, max = 6)))
+         opts_toolbar(hidden = c('selection', 'zoom', 'misc'))))
 ```
 
 ## Speranza di vita e probabilità di morte
@@ -617,8 +610,7 @@ girafe(ggobj = umbe0 + umbe65 + umbq0 +
                       background:rgba(255, 255, 255, 0.8);'),
          opts_hover(css = ''),
          opts_hover_inv(css = "opacity:0.3;"),
-         opts_toolbar(position = 'bottomleft'),
-         opts_zoom(min = .7, max = 6)))
+         opts_toolbar(hidden = c('selection', 'zoom', 'misc'))))
 ```
 
 ## Curva dei sopravviventi per età
