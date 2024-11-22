@@ -21,6 +21,7 @@ execute:
 code-fold: true
 fig-width: 12
 fig-asp: 0.4
+bibliography: references.bib
 ---
 
 ```{r}
@@ -50,19 +51,15 @@ fecdf <- readRDS('Dati/Export/fecdf.rds')
 umbMort <- readRDS('Dati/Export/umbMort.rds')
 ```
 
-## Introduzione
+# Introduzione
 
-882.015 residenti al 1° gennaio 2019: 13,8 per cento di 75 anni e più
+L'Umbria è una regione di dimensioni moderate del Centro Italia. Al 1° gennaio 2019, la popolazione umbra ammontava a 882.015 residenti. Di questi, il 13,8% aveva almeno 75 anni [@datista]. La regione Umbria è . Resa celebre dal proprio patrimonio naturalistico, artistico e culturale, nonché per la curiosa condizione di unica regione dell'Italia centrale a non avere alcun affaccio sul mare, l'Umbria è un perfetto caso di studio per la demografia. L'evoluzione della struttura per età della popolazione umbra ha anticipato in un certo qual modo le dinamiche che hanno poi caratterizzato quella italiana nella sua interezza.
 
-386.420 famiglie al 31 dicembre 2018: 30 per cento composte da una coppia con figli; 20,1 per cento da persone sole di 60 anni e oltre
+Nei successivi paragrafi, la popolazione umbra verrà messa sotto il microscopio. Dopo una prima analisi descrittiva della struttura per età, verranno presi in esame i principali indicatori riguardo migrazione, fecondità e mortalità. Allo scopo di ottenere una maggiore profondità di indagine, verranno calcolati anche indici specifici per età e gruppi sociali (cittadini italiani e stranieri).
 
-14,3 per cento delle famiglie e 16,3 per cento degli individui in condizioni di povertà relativa nel 2018
+# Analisi della struttura per età
 
-[@datista]
-
-## Analisi della struttura per età
-
-### Piramidi delle età
+## Piramidi delle età
 
 L'Umbria è una regione particolarmente anziana. Nel 2000 presentava, infatti, delle proporzioni di popolazione oltre ai 65 anni decisamente maggiori rispetto a quelle riscontrabili nell'interezza della popolazione italiana. Al 2024, la composizione per età della popolazione umbra ricalca più fedelmente quella nazionale, pur presentando uno sbilanciamento maggiore verso le età più avanzate.
 
@@ -134,7 +131,7 @@ it00gg + um00gg + it24gg + um24gg +
         plot.title.position = 'panel')
 ```
 
-### Indici di popolazione
+## Indici di popolazione
 
 La marcata anzianità della popolazione umbra può essere facilmente confermata confrontando la sua età media con quella dell'Italia intera nel 2000 e nel 2024: anche a netto di una tendenza generalizzata all'invecchiamento, la differenza tra il valore regionale e la media nazionale rimane sempre positiva. Notevole è però il fatto che l'Umbria sia nell'atto di essere *raggiunta* dal resto del Paese, con una diminuzione della distanza tra i due valori medi da 2.78 a 1.55 anni di età. Si noti che l'età media della popolazione femminile è sempre maggiore di quella maschile. Questo è principalmente dovuto a una maggiore sopravvivenza femminile in età avanzata, come riscontrabile analizzando le piramidi delle età di cui sopra.
 
@@ -306,7 +303,7 @@ etadf |>
               )
 ```
 
-## Migrazioni
+# Migrazioni
 
 Il bilancio migratorio umbro dei 22 anni fra il 2002 e il 2024 è generalmente positivo. Trainato da un incostante ma significativo fenomeno immigratorio con l'estero, il saldo migratorio totale dell'Umbria è ulteriormente maggiorato da un saldo migratorio interno generalmente positivo fino al 2013. Fra il 2013 e il 2015, l'Umbria vive l'unico periodo emigratorio della sua storia recente, per poi registrare una generale tendenza al rialzo fino ad oggi.
 
@@ -362,11 +359,11 @@ girafe(ggobj = inddf |>
 
 ```
 
-## Fecondità
+# Fecondità
 
 Il numero di figli per donna (tasso di fecondità totale, TFT) delle madri di nazionalità italiana in Umbria partiva nel 2002 da livelli paragonabili a quelli nazionali. L'indicatore sta però calando ad un ritmo più alto rispetto alla media nazionale, configurando un fenomeno di invecchiamento ancora più pronunciato nel medio periodo.
 
-### Tasso di fecondità totale
+## Tasso di fecondità totale
 
 Il TFT delle madri straniere è generalmente molto più alto in termini assoluti. Anche in questo sottogruppo, però, rimane vera l'osservazione di cui sopra: il TFT calcolato sulle madri straniere in Umbria cala a ritmi sensibilmente maggiori rispetto al resto d'Italia.
 
@@ -414,7 +411,7 @@ girafe(ggobj = fecdf |>
 
 ```
 
-### Età media al parto
+## Età media al parto
 
 Forse il fattore più importante per comprendere la differenza abissale fra i TFT di cittadine italiane e straniere è l'età al primo parto. Se è vero che esiste una generalizzata tendenza verso l'alto, le madri straniere partivano nel 2002 da livelli sensibilmente più bassi (circa 27 anni contro gli oltre 30 delle madri italiane).
 
@@ -496,7 +493,7 @@ girafe(ggobj = FX |>
   )
 ```
 
-## Mortalità
+# Mortalità
 
 Ad ulteriore riprova del declino demografico della regione Umbria, si noti come la sua crescita naturale presentasse valori nettamente negativi già nel 2002. La tendenza negativa nazionale si ripropone con valori assoluti più alti anche nell'Umbria odierna, dove il valore più recente arriva al -7.0.
 
@@ -540,7 +537,7 @@ girafe(ggobj = inddf |>
   )
 ```
 
-### Speranza di vita e mortalità
+## Speranza di vita e mortalità
 
 L'evoluzione recente degli indicatori di mortalità restituisce una fotografia dello stadio finale del processo di transizione demografica: la speranza di vita alla nascita e a 65 anni cresce fino a stabilizzarsi su livelli molto alti, la probabilità di morte alla nascita crolla sotto al 2,5%. È notevole lo shock in termini di mortalità causato dalla pandemia di COVID-19: nel 2020 speranza di vita e probabilità di morte balzano indietro ai livelli dei due anni precedenti, soprattutto nella popolazione maschile.
 
@@ -611,7 +608,7 @@ girafe(ggobj = umbe0 + umbe65 + umbq0 +
          opts_zoom(min = .7, max = 6)))
 ```
 
-### Sopravviventi per anno
+## Sopravviventi per anno
 
 La *sconfitta* della mortalità è ulteriormente esemplificata dalla rappresentazione della curva di sopravviventi per anno, che approssima sempre più un rettangolo. Al diminuire della probabilità di morte per ogni età, il numero di sopravviventi rimane essenzialmente costante fino ad età molto avanzate. Le curve sembrano avvicinarsi anno dopo anno ad una sorta di *limite naturale* della vita umana, età a cui la probabilità di morte decolla e i sopravviventi diminuiscono drasticamente.
 

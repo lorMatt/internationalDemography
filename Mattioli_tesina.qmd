@@ -81,13 +81,9 @@ umbMort <- readRDS('Dati/Export/umbMort.rds')
 
 ## Introduzione
 
-882.015 residenti al 1° gennaio 2019: 13,8 per cento di 75 anni e più
+L'Umbria è una regione di dimensioni moderate del Centro Italia. Al 1° gennaio 2019, la popolazione umbra ammontava a 882.015 residenti. Di questi, il 13,8% aveva almeno 75 anni [@datista]. La regione Umbria è . Resa celebre dal proprio patrimonio naturalistico, artistico e culturale, nonché per la curiosa condizione di unica regione dell'Italia centrale a non avere alcun affaccio sul mare, l'Umbria è un perfetto caso di studio per la demografia. L'evoluzione della struttura per età della popolazione umbra ha anticipato in un certo qual modo le dinamiche che hanno poi caratterizzato quella italiana nella sua interezza.
 
-386.420 famiglie al 31 dicembre 2018: 30 per cento composte da una coppia con figli; 20,1 per cento da persone sole di 60 anni e oltre
-
-14,3 per cento delle famiglie e 16,3 per cento degli individui in condizioni di povertà relativa nel 2018
-
-[@datista]
+Nei successivi paragrafi, la popolazione umbra verrà messa sotto il microscopio. Dopo una prima analisi descrittiva della struttura per età, verranno presi in esame i principali indicatori riguardo migrazione, fecondità e mortalità. Per ottenere una maggiore profondità dell'indagine, verranno calcolati anche indici specifici per età e gruppi sociali (cittadini italiani e stranieri).
 
 ## Analisi della struttura per età
 
@@ -228,7 +224,7 @@ etadf |>
 
 Il bilancio migratorio umbro dei 22 anni fra il 2002 e il 2024 è generalmente positivo. Trainato da un incostante ma significativo fenomeno immigratorio con l'estero, il saldo migratorio totale dell'Umbria è ulteriormente maggiorato da un saldo migratorio interno generalmente positivo fino al 2013. Fra il 2013 e il 2015, l'Umbria vive l'unico periodo emigratorio della sua storia recente, per poi registrare una generale tendenza al rialzo fino ad oggi.
 
-## Saldi migratori
+### Saldi migratori
 
 In generale, l'andamento del saldo migratorio umbro va a pari passo con quello nazionale, caratterizzato da due picchi nel 2003 (in corrispondenza dell'introduzione della legge Bossi-Fini) e nel 2007 (anno di ulteriori sanatorie, contemporanee all'entrata della Romania nell'Unione Europea). È interessante l'avvallamento del saldo migratorio totale fra il 2018 e il 2020, indipendente dal saldo migratorio interno e da quello con l'estero. Il motivo di questo scoppiamento è con tutta probabilità dovuto a problemi definitori e di conteggio: Il saldo migratorio con l'estero non tiene conto di alcuni specifici fenomeni emigratori, su tutti i rimpatri. Nel 2018, per mezzo dei decreti sicurezza, c'è stato un notevole aumento di questo tipo di evento demografico, che ha causato lo scoppiamento di cui sopra, rientrato solamente nel 2022.
 
