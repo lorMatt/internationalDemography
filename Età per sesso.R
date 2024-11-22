@@ -62,7 +62,6 @@ it24gg <- it24 |>
              fill = Sesso)) +
   geom_bar(stat = 'identity', width = 1) +
   coord_flip() +
-  scale_fill_manual(values = c('#EEC584', '#55868C')) +
   labs(subtitle = 'Italia 2024') +
   theme(axis.title.x = element_blank(),
         panel.background = element_blank(),
@@ -77,7 +76,6 @@ it00gg <- it00 |>
              fill = Sesso)) +
   geom_bar(stat = 'identity', width = 1) +
   coord_flip() +
-  scale_fill_manual(values = c('#EEC584', '#55868C')) +
   labs(subtitle = 'Italia 2000') +
   theme(axis.title.x = element_blank(),
         panel.background = element_blank(),
@@ -94,7 +92,6 @@ um24gg <- um24 |>
              fill = Sesso)) +
   geom_bar(stat = 'identity', width = 1) +
   coord_flip() +
-  scale_fill_manual(values = c('#942911', '#90A583')) +
   labs(subtitle = 'Umbria 2024') +
   theme(axis.title.x = element_blank(),
         panel.background = element_blank(),
@@ -109,7 +106,6 @@ um00gg <- um00 |>
              fill = Sesso)) +
   geom_bar(stat = 'identity', width = 1) +
   coord_flip() +
-  scale_fill_manual(values = c('#942911', '#90A583')) +
   labs(subtitle = 'Umbria 2000') +
   theme(axis.title.x = element_blank(),
         panel.background = element_blank(),
@@ -117,11 +113,20 @@ um00gg <- um00 |>
         legend.title = element_blank())
 
 ## Patchwork ----
-
 it00gg + um00gg + it24gg + um24gg +
   plot_layout(guides = 'collect', axes = 'collect') +
-  plot_annotation(title = 'Piramide delle età',
-                  caption = 'Dati Demo.Istat')
+  plot_annotation(title = 'Piramidi delle età',
+                  caption = 'Dati Demo.Istat',
+                  theme = theme(plot.title = element_text(size = 18))) &
+  theme(legend.position = 'bottom',
+        axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        panel.background = element_blank(),
+        panel.grid = element_line(colour = 'gray90'),
+        legend.title = element_blank(),
+        plot.title.position = 'panel')
+
 # Indici -----------------------------------------------------------------------
 
 ## Età media per genere ----
@@ -221,7 +226,7 @@ rapMasc <- um00 |>
   select(anno, geo, rapMasc) |> 
   bind_rows(rapMasc)
 
-## Italia ----
+### Italia ----
 rapMasc <- it24 |> 
   filter(Sesso != 'Totale') |> 
   group_by(Sesso) |> 
@@ -394,6 +399,55 @@ etadf <- full_join(indDip, indDipGiov) |>
                           names_prefix = 'etaMed_')) |> 
   select(anno, geo, etaMed_F, etaMed_M, etaMed_Totale, dipGiov, dipVec, dip, vec, rapMasc)
 
+## GT ----
+etadf |>
+  mutate(Anno = anno,
+         'Territorio' = geo,
+         'Femmine' = round(etaMed_F, 2),
+         'Maschi' = round(etaMed_M, 2),
+         'Totale' = round(etaMed_Totale, 2),
+         'Giovanile' = round(dipGiov, 2),
+         'Vecchiaia' = round(dipVec, 2),
+         'Complessivo' = round(dip, 2),
+         'Indice di vecchiaia' = round(vec, 2),
+         'Rapporto di mascolinità' = round(rapMasc, 2)
+  ) |> 
+  select(Territorio, Femmine, Maschi, Totale, Giovanile, Vecchiaia, Complessivo, `Indice di vecchiaia`, `Rapporto di mascolinità`) |> 
+  gt(rowname_col = 'Territorio') |> 
+  tab_stubhead(
+    label = 'Anno'
+  ) |> 
+  tab_row_group(
+    label = '2000',
+    rows = c(1,3)
+  ) |> 
+  tab_row_group(
+    label = '2024',
+    rows = c(2,4)
+  ) |> 
+  tab_header(
+    title = md('## Indici di popolazione'),
+    subtitle = md('Per **anno** e **territorio**')
+  ) |> 
+  tab_spanner(
+    label = 'Età media',
+    columns = c(Femmine, Maschi, Totale)
+  ) |> 
+  tab_spanner(
+    label = 'Indice di dipendenza',
+    columns = c(Giovanile, Vecchiaia, `Complessivo`)
+  ) |> 
+  tab_source_note(
+    source_note = 'Dati Demo.Istat'
+  ) |> 
+  cols_align(
+    align = 'center',
+    columns = 3:9
+  ) |>
+  cols_align(
+    align = 'left',
+    columns = 1:2
+  )
 # Data export ----
 write_rds(it00, 'Dati/Export/it00.rds')
 write_rds(it24, 'Dati/Export/it24.rds')

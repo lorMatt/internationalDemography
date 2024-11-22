@@ -53,7 +53,6 @@ umbe0 <- umbMort |>
   filter(Sesso == 'Maschi' & Età == 0 | Sesso == 'Femmine' & Età == 0) |> 
   ggplot(aes(x = anno, y = `Speranza di vita`, col = Sesso,
              dataid = anno, tooltip = `Speranza di vita`)) +
-  geom_point_interactive() +
   geom_path(aes(group = Sesso)) +
   labs(title = 'Speranza di vita alla nascita',
        subtitle = 'Regione Umbria') +
@@ -70,7 +69,6 @@ umbe65 <- umbMort |>
   filter(Sesso == 'Maschi' & Età == 65 | Sesso == 'Femmine' & Età == 65) |> 
   ggplot(aes(x = anno, y = `Speranza di vita`, col = Sesso,
              dataid = anno, tooltip = `Speranza di vita`)) +
-  geom_point_interactive() +
   geom_path(aes(group = Sesso)) +
   labs(title = 'Speranza di vita a 65 anni',
        subtitle = 'Regione Umbria') +
@@ -87,7 +85,6 @@ umbq0 <- umbMort |>
   filter(Sesso == 'Maschi' & Età == 0 | Sesso == 'Femmine' & Età == 0) |> 
   ggplot(aes(x = anno, y = `Probabilità di morte (per mille)`,
              col = Sesso, dataid = anno, tooltip = `Probabilità di morte (per mille)`)) +
-  geom_point_interactive() +
   geom_path(aes(group = Sesso)) +
   labs(title = 'Probabilità di morte alla nascita',
        subtitle = 'Regione Umbria') +
@@ -98,6 +95,24 @@ umbq0 <- umbMort |>
         axis.ticks = element_blank(),
         axis.title = element_blank())
 
+## Curva sopravviventi anno per anno ----
+### Umbria ----
+umbMort |> 
+  filter(Sesso != 'Maschi e femmine') |> 
+  filter(anno == 1974 | anno == 1994 | anno == 2014) |>
+  ggplot(aes(x = Età, y = Sopravviventi, col = anno, group = anno)) +
+  geom_line() +
+  facet_wrap(~Sesso) +
+  labs(title = 'Curva di sopravvivenza per anno',
+       subtitle = 'Regione Umbria',
+       caption = 'Dati Demo.Istat') +
+  theme(legend.position = 'none',
+        panel.background = element_blank(),
+        panel.grid = element_line(colour = 'gray90'),
+        legend.title = element_blank(),
+        strip.background = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title = element_blank())
 ## Patchwork --------------------------------------------------------------------
 
 ### Umbria ----
@@ -105,3 +120,4 @@ umbe0 + umbe65 + umbq0
 
 # Data export ------------------------------------------------------------------
 write_rds(umbMort, 'Dati/Export/umbMort.rds')
+

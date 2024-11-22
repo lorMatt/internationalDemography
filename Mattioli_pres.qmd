@@ -1,0 +1,648 @@
+---
+title: "Umbria"
+subtitle: 'Principali indicatori demografici'
+format:
+  revealjs:
+    code-tools: true
+    self-contained: true
+    code-fold: true
+    scrollable: true
+    transition: slide
+    footer: 'Umbria - indicatori demografici'
+    logo: 'LogoUnibo.png'
+lang: 'it'
+author:
+  - name: 'Lorenzo Mattioli'
+    affiliations:
+     - name: 'Alma Mater Studiorum - Università di Bologna'
+       department: 'Dipartimento di Scienze Politiche e Sociali - SPS'
+
+execute: 
+  warning: false
+code-fold: true
+fig-width: 12
+fig-asp: 0.4
+editor: visual
+---
+
+```{r}
+#| label: Setup
+#| echo: false
+# Pacchetti
+if (!require("pacman")) install.packages("pacman")
+library(pacman)
+p_load(ggplot2, tidyverse, readxl, patchwork, ggiraph, ggbump, gt, gtExtras)
+
+# Importazione dati
+## Età per sesso
+it00 <- readRDS('Dati/Export/it00.rds')
+it24 <- readRDS('Dati/Export/it24.rds')
+um00 <- readRDS('Dati/Export/um00.rds')
+um24 <- readRDS('Dati/Export/um24.rds')
+etadf <- readRDS('Dati/Export/etadf.rds')
+FX <- readRDS('Dati/Export/FX.rds')
+
+## Indicatori
+inddf <- readRDS('Dati/Export/inddf.rds')
+
+## Fecondità
+fecdf <- readRDS('Dati/Export/fecdf.rds')
+
+## Mortalità
+umbMort <- readRDS('Dati/Export/umbMort.rds')
+```
+
+# Introduzione
+
+## Dati di popolazione
+
+::: incremental
+-   882.015 residenti al 1° gennaio 2019
+    -   13,8 per cento di 75 anni e più
+-   386.420 famiglie al 31 dicembre 2018
+    -   30 per cento composte da una coppia con figli
+    -   20,1 per cento da persone sole di 60 anni e oltre
+-   14,3 per cento delle famiglie e 16,3 per cento degli individui in condizioni di povertà relativa nel 2018
+:::
+
+# Analisi della struttura per età
+
+## Piramidi delle età - 2000
+
+```{r}
+#| label: Piramidi delle età 2000
+#| fig-asp: .5
+
+## Italia ----
+### 2024
+it24gg <- it24 |> 
+  filter(Sesso != 'Totale') |>
+  ggplot(aes(x = Età,
+             y = ifelse(Sesso == 'M',
+                        -`Tot per genere`, `Tot per genere`),
+             fill = Sesso)) +
+  geom_bar(stat = 'identity', width = 1) +
+  coord_flip() +
+  # scale_fill_manual(values = c('#EEC584', '#55868C')) +
+  labs(title = 'Italia 2024')
+  
+it00gg <- it00 |> 
+  filter(Sesso != 'Totale') |> 
+  ggplot(aes(x = Età,
+             y = ifelse(Sesso == 'M',
+                        -`2000`, `2000`),
+             fill = Sesso)) +
+  geom_bar(stat = 'identity', width = 1) +
+  coord_flip() +
+  # scale_fill_manual(values = c('#EEC584', '#55868C')) +
+  labs(title = 'Italia 2000')
+
+## Umbria ----
+### 2024
+um24gg <- um24 |> 
+  filter(Sesso != 'Totale') |>
+  ggplot(aes(x = Età,
+             y = ifelse(Sesso == 'M',
+                        -`Tot per genere`, `Tot per genere`),
+             fill = Sesso)) +
+  geom_bar(stat = 'identity', width = 1) +
+  coord_flip() +
+  # scale_fill_manual(values = c('#942911', '#90A583')) +
+  labs(title = 'Umbria 2024')
+
+um00gg <- um00 |> 
+  filter(Sesso != 'Totale') |> 
+  ggplot(aes(x = Età,
+             y = ifelse(Sesso == 'M',
+                        -`2000`, `2000`),
+             fill = Sesso)) +
+  geom_bar(stat = 'identity', width = 1) +
+  coord_flip() +
+  # scale_fill_manual(values = c('#942911', '#90A583')) +
+  labs(title = 'Umbria 2000')
+
+## Patchwork ----
+it00gg + um00gg +
+  plot_layout(guides = 'collect', axes = 'collect') +
+  plot_annotation(title = 'Piramidi delle età',
+                  caption = 'Dati Demo.Istat',
+                  theme = theme(plot.title = element_text(size = 18))) &
+  theme(legend.position = 'bottom',
+        axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        panel.background = element_blank(),
+        panel.grid = element_line(colour = 'gray90'),
+        legend.title = element_blank(),
+        plot.title.position = 'panel')
+```
+
+## Piramidi delle età - 2024
+
+```{r}
+#| label: Piramidi delle età 2024
+#| fig-asp: .5
+
+## Patchwork ----
+it24gg + um24gg +
+  plot_layout(guides = 'collect', axes = 'collect') +
+  plot_annotation(title = 'Piramidi delle età',
+                  caption = 'Dati Demo.Istat',
+                  theme = theme(plot.title = element_text(size = 18))) &
+  theme(legend.position = 'bottom',
+        axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        panel.background = element_blank(),
+        panel.grid = element_line(colour = 'gray90'),
+        legend.title = element_blank(),
+        plot.title.position = 'panel')
+```
+
+## Indici di popolazione
+
+```{r}
+#| label: Indici
+
+etadf |>
+  mutate(Anno = anno,
+         'Territorio' = geo,
+         'Femmine' = round(etaMed_F, 2),
+         'Maschi' = round(etaMed_M, 2),
+         'Totale' = round(etaMed_Totale, 2),
+         'Giovanile' = round(dipGiov, 2),
+         'Vecchiaia' = round(dipVec, 2),
+         'Complessivo' = round(dip, 2),
+         'Indice di vecchiaia' = round(vec, 2),
+         'Rapporto di mascolinità' = round(rapMasc, 2)
+         ) |> 
+  select(Territorio, Femmine, Maschi, Totale, Giovanile, Vecchiaia, Complessivo, `Indice di vecchiaia`, `Rapporto di mascolinità`) |> 
+  gt(rowname_col = 'Territorio') |> 
+  tab_stubhead(
+    label = 'Anno'
+  ) |> 
+  tab_row_group(
+    label = '2000',
+    rows = c(1,3)
+  ) |> 
+  tab_row_group(
+    label = '2024',
+    rows = c(2,4)
+  ) |> 
+  tab_header(
+    title = md('## Indici di popolazione'),
+    subtitle = md('Per **anno** e **territorio**')
+             ) |> 
+  tab_spanner(
+    label = 'Età media',
+    columns = c(Femmine, Maschi, Totale)
+  ) |> 
+  tab_spanner(
+    label = 'Indice di dipendenza',
+    columns = c(Giovanile, Vecchiaia, `Complessivo`)
+  ) |> 
+  tab_source_note(
+    source_note = 'Dati Demo.Istat'
+  ) |> 
+  cols_align(
+    align = 'center',
+    columns = 3:9
+  ) |>
+  cols_align(
+    align = 'left',
+    columns = 1:2
+  ) |> 
+  tab_options(table.background.color = 'white',
+              table.font.style = 'Roboto',
+              table.border.top.color = 'white',
+              heading.align = 'center',
+              row.striping.include_stub =FALSE,
+              heading.border.bottom.color = "white",
+              row_group.border.bottom.color = "white",
+              row_group.border.top.color = "white"
+              )
+```
+
+## Età media
+
+```{r}
+#| label: barplot età media
+
+girafe(ggobj = etadf |>
+  mutate(Anno = anno,
+         'Territorio' = geo,
+         'Femmine' = round(etaMed_F, 2),
+         'Maschi' = round(etaMed_M, 2),
+         'Totale' = round(etaMed_Totale, 2),
+         'Giovanile' = round(dipGiov, 2),
+         'Vecchiaia' = round(dipVec, 2),
+         'Complessivo' = round(dip, 2),
+         'Indice di vecchiaia' = round(vec, 2),
+         'Rapporto di mascolinità' = round(rapMasc, 2)
+         ) |> 
+  select(Anno, Territorio, Femmine, Maschi, Totale) |> 
+  pivot_longer(cols = c(Femmine, Maschi, Totale)) |> 
+  ggplot(aes(x = name, y = value, fill = factor(Anno), dataid = value, tooltip = value)) +
+  geom_col_interactive(position = 'dodge', width = .6) +
+  geom_hline(yintercept = 0) +
+  geom_text(aes(y = 2, label = name), hjust = 0, col = 'white') +
+  coord_flip() +
+  labs(title = 'Età medie',
+       caption = 'Dati Demo.Istat') +
+  scale_fill_manual(values = c('steelblue', 'deepskyblue4')) +
+  scale_y_continuous(expand = c(0, 0)) +
+  facet_wrap(~Territorio) +
+  theme(legend.position = 'bottom',
+        axis.title = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        panel.background = element_blank(),
+        panel.grid = element_line(colour = 'gray90'),
+        legend.title = element_blank(),
+        strip.background = element_blank(),
+        plot.title.position = 'panel',
+        panel.grid.major.x = element_line(color = "#A8BAC4", size = 0.3)),
+  options = list(
+         opts_tooltip(css = 'background-color:white;
+                      color:black;
+                      font-family:Helvetica;
+                      font-style:empty;
+                      padding:8px;
+                      border-radius:10px;
+                      background:rgba(255, 255, 255, 0.8);'),
+         opts_hover(css = ''),
+         opts_hover_inv(css = "opacity:0.3;"),
+         opts_toolbar(position = 'bottomleft'),
+         opts_zoom(min = .7, max = 6)))
+```
+
+## Indici di dipendenza
+
+```{r}
+#| label: barplot ind dipendenza
+
+girafe(ggobj = etadf |>
+  mutate(Anno = anno,
+         'Territorio' = geo,
+         'Femmine' = round(etaMed_F, 2),
+         'Maschi' = round(etaMed_M, 2),
+         'Totale' = round(etaMed_Totale, 2),
+         'Giovanile' = round(dipGiov, 2),
+         'Vecchiaia' = round(dipVec, 2),
+         'Complessivo' = round(dip, 2),
+         'Indice di vecchiaia' = round(vec, 2),
+         'Rapporto di mascolinità' = round(rapMasc, 2)
+         ) |> 
+  select(Anno, Territorio, Giovanile, Vecchiaia, Complessivo) |> 
+  pivot_longer(cols = c(Giovanile, Vecchiaia, Complessivo)) |> 
+  ggplot(aes(x = name, y = value, fill = factor(Anno), dataid = value, tooltip = value)) +
+  geom_col_interactive(position = 'dodge', width = .6) +
+  geom_hline(yintercept = 0) +
+  geom_text(aes(y = .02, label = name), hjust = 0, col = 'white') +
+  coord_flip() +
+  labs(title = 'Indici di indipendenza',
+       caption = 'Dati Demo.Istat') +
+  scale_fill_manual(values = c('steelblue', 'deepskyblue4')) +
+  scale_y_continuous(expand = c(0, 0)) +
+  facet_wrap(~Territorio) +
+  theme(legend.position = 'bottom',
+        axis.title = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        panel.background = element_blank(),
+        panel.grid = element_line(colour = 'gray90'),
+        legend.title = element_blank(),
+        strip.background = element_blank(),
+        plot.title.position = 'panel',
+        panel.grid.major.x = element_line(color = "#A8BAC4", size = 0.3)),
+  options = list(
+         opts_tooltip(css = 'background-color:white;
+                      color:black;
+                      font-family:Helvetica;
+                      font-style:empty;
+                      padding:8px;
+                      border-radius:10px;
+                      background:rgba(255, 255, 255, 0.8);'),
+         opts_hover(css = ''),
+         opts_hover_inv(css = "opacity:0.3;"),
+         opts_toolbar(position = 'bottomleft'),
+         opts_zoom(min = .7, max = 6)))
+```
+
+# Migrazioni
+
+## Saldi migratori
+
+```{r}
+#| label: Migrazione - serie storica
+
+girafe(ggobj = inddf |> 
+  filter(var == 'Saldo migratorio con l\'estero' | var == 'Saldo migratorio interno' | var == 'Saldo migratorio') |> 
+  ggplot(aes(x = anno, y = value, dataid = anno, tooltip = value)) +
+  geom_point_interactive(alpha = 0) +
+  geom_line(data = ~. |> filter(Territorio == 'Italia' & var != 'Saldo migratorio interno')
+            |> filter(var == 'Saldo migratorio'), aes(linetype = var)) +
+  geom_line(data = ~. |> filter(Territorio == 'Italia' & var != 'Saldo migratorio interno')
+            |> filter(var != 'Saldo migratorio'), aes(col = var)) +
+  geom_line(data = ~. |> filter(Territorio == 'Umbria')
+            |> filter(var == 'Saldo migratorio'), aes(linetype = var)) +
+  geom_line(data = ~. |> filter(Territorio == 'Umbria')
+            |> filter(var != 'Saldo migratorio'), aes(col = var)) +
+  geom_line(data = ~. |> filter(var != 'Saldo migratorio'), aes(col = var)) +
+  geom_hline(yintercept = 0, col = 'gray60') +
+  scale_x_continuous(breaks = c(2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024)) +
+  labs(title = 'Saldi migratori',
+       subtitle = 'Serie storica 2002-2023',
+       caption = 'Dati Demo.Istat') +
+  facet_wrap(~Territorio) +
+  theme(legend.position = 'bottom',
+        panel.background = element_blank(),
+        panel.grid = element_line(colour = 'gray90'),
+        legend.title = element_blank(),
+        plot.title = element_text(size = 18),
+        plot.subtitle = element_text(size = 12),
+        strip.background = element_blank(),
+        strip.text = element_text(size = 12),
+        axis.ticks = element_blank(),
+        axis.title = element_blank()),
+  options = list(
+         opts_tooltip(css = 'background-color:white;
+                      color:black;
+                      font-family:Helvetica;
+                      font-style:empty;
+                      padding:8px;
+                      border-radius:10px;
+                      background:rgba(255, 255, 255, 0.8);'),
+         opts_hover(css = ''),
+         opts_hover_inv(css = "opacity:0.3;"),
+         opts_toolbar(position = 'bottomleft'),
+         opts_zoom(min = .7, max = 6)))
+```
+
+# Fecondità
+
+## Tasso di fecondità totale
+
+```{r}
+#| label: Tasso di fecondità totale
+
+girafe(ggobj = fecdf |> 
+  filter(var == 'Tasso di fecondità totale, madri italiane'
+         | var == 'Tasso di fecondità totale, madri straniere'
+         | var == 'Tasso di fecondità totale, tutte le madri') |> 
+  mutate(var = gsub('Tasso di fecondità totale, m', 'M', var, fixed = T),
+         var = gsub('Tasso di fecondità totale, t', 'T', var, fixed = T)) |> 
+  ggplot(aes(x = anno, y = value, dataid = anno, tooltip = value)) +
+  geom_point_interactive(alpha = 0) +
+  geom_line(data = ~. |> filter(var == 'Tutte le madri'), aes(linetype = var)) +
+  geom_line(data = ~. |> filter(var != 'Tutte le madri'), aes(col = var)) +
+  labs(title = 'Tasso di fecondità totale') +
+  scale_x_continuous(breaks = c(2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2023)) +
+  labs(title = 'Tasso di fecondità totale',
+       subtitle = 'Serie storica 2002-2023',
+       caption = 'Dati Demo.Istat') +
+  facet_wrap(~Territorio) +
+  theme(legend.position = 'bottom',
+        panel.background = element_blank(),
+        panel.grid = element_line(colour = 'gray90'),
+        legend.title = element_blank(),
+        strip.background = element_blank(),
+        plot.title = element_text(size = 18),
+        plot.subtitle = element_text(size = 12),
+        strip.text = element_text(size = 12),
+        axis.ticks = element_blank(),
+        axis.title = element_blank()),
+  options = list(
+         opts_tooltip(css = 'background-color:white;
+                      color:black;
+                      font-family:Helvetica;
+                      font-style:empty;
+                      padding:8px;
+                      border-radius:10px;
+                      background:rgba(255, 255, 255, 0.8);'),
+         opts_hover(css = ''),
+         opts_toolbar(position = 'bottomleft'),
+         opts_zoom(min = .7, max = 6)))
+
+```
+
+## Età media al parto
+
+```{r}
+#| label: Età media al parto
+
+girafe(ggobj = fecdf |> 
+  filter(Territorio == 'Umbria',
+         var == 'Età media al parto, madri italiane'
+         | var == 'Età media al parto, madri straniere'
+         | var == 'Età media al parto, tutte le madri') |> 
+  mutate(var = gsub('Età media al parto, m', 'M', var, fixed = T),
+         var = gsub('Età media al parto, t', 'T', var, fixed = T)) |> 
+  ggplot(aes(x = anno, y = value, dataid = anno, tooltip = value)) +
+  geom_point_interactive(alpha = 0) +
+  geom_line(data = ~. |> filter(var == 'Tutte le madri'), aes(linetype = var)) +
+  geom_line(data = ~. |> filter(var != 'Tutte le madri'), aes(col = var)) +
+  labs(title = 'Età media al parto',
+       subtitle = 'Serie storica 2002-2023') +
+  scale_x_continuous(breaks = c(2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024)) +
+  facet_wrap(~Territorio) +
+  theme(legend.position = 'bottom',
+        panel.background = element_blank(),
+        panel.grid = element_line(colour = 'gray90'),
+        legend.title = element_blank(),
+        plot.title = element_text(size = 18),
+        plot.subtitle = element_text(size = 12),
+        strip.background = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title = element_blank()),
+  options = list(
+         opts_tooltip(css = 'background-color:white;
+                      color:black;
+                      font-family:Helvetica;
+                      font-style:empty;
+                      padding:8px;
+                      border-radius:10px;
+                      background:rgba(255, 255, 255, 0.8);'),
+         opts_hover(css = ''),
+         opts_toolbar(position = 'bottomleft'),
+         opts_zoom(min = .7, max = 6)))
+
+```
+
+## TFT - Indici specifici
+
+```{r}
+#| label: 'FX ita/stra'
+
+girafe(ggobj = FX |>
+  filter(`Anno di evento` == 2013 | `Anno di evento` == 2023) |> 
+  ggplot(aes(x = Età, y = FX, col = citt, dataid = Età, tooltip = FX)) +
+  geom_point_interactive(alpha = 0) +
+  geom_line() +
+  facet_wrap(~`Anno di evento`) +
+  labs(title = 'Tassi specifici di fecondità per età',
+       subtitle = 'Regione Umbria',
+       caption = 'Dati Demo.Istat') +
+  theme(legend.position = 'bottom',
+        panel.background = element_blank(),
+        panel.grid = element_line(colour = 'gray90'),
+        legend.title = element_blank(),
+        plot.subtitle = element_text(size = 12),
+        plot.title = element_text(size = 18),
+        strip.background = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title = element_blank()),
+  options = list(
+         opts_tooltip(css = 'background-color:white;
+                      color:black;
+                      font-family:Helvetica;
+                      font-style:empty;
+                      padding:8px;
+                      border-radius:10px;
+                      background:rgba(255, 255, 255, 0.8);'),
+         opts_hover(css = ''),
+         opts_toolbar(position = 'bottomleft'),
+         opts_zoom(min = .7, max = 6)))
+```
+
+# Mortalità
+
+## Crescita naturale
+
+```{r}
+#| label: Mortalità - Serie storica
+
+girafe(ggobj = inddf |>
+  filter(var == 'Quoziente di mortalità' | var == 'Quoziente di natalità' | var == 'Crescita naturale') |> 
+  ggplot(aes(x = anno, y = value, dataid = anno, tooltip = value)) +
+  geom_line(data = ~. |> filter(var == 'Crescita naturale'), aes(linetype = var)) +
+  geom_line(data = ~. |> filter(var != 'Crescita naturale'), aes(col = var)) +
+  geom_point_interactive(alpha = 0) +
+  geom_hline(yintercept = 0, col = 'gray60') +
+  labs(title = 'Mortalità',
+       subtitle = 'Serie storica 2002-2023',
+       caption = 'Dati Demo.Istat') +
+  facet_wrap(~Territorio) +
+  scale_x_continuous(breaks = c(2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024)) +
+  theme(legend.position = 'bottom',
+        plot.title = element_text(size = 18),
+        plot.subtitle = element_text(size = 12),
+        panel.background = element_blank(),
+        panel.grid = element_line(colour = 'gray90'),
+        legend.title = element_blank(),
+        strip.background = element_blank(),
+        strip.text = element_text(size = 12),
+        axis.ticks = element_blank(),
+        axis.title = element_blank()),
+  options = list(
+         opts_tooltip(css = 'background-color:white;
+                      color:black;
+                      font-family:Helvetica;
+                      font-style:empty;
+                      padding:8px;
+                      border-radius:10px;
+                      background:rgba(255, 255, 255, 0.8);'),
+         opts_hover(css = ''),
+         opts_hover_inv(css = "opacity:0.3;"),
+         opts_toolbar(position = 'bottomleft'),
+         opts_zoom(min = .7, max = 6)))
+```
+
+## Speranza di vita e probabilità di morte
+
+```{r}
+#| label: Mortalità
+#| width: 18
+
+## Speranza di vita alla nascita per sesso
+umbe0 <- umbMort |> 
+  filter(Sesso == 'Maschi' & Età == 0 | Sesso == 'Femmine' & Età == 0) |> 
+  ggplot(aes(x = anno, y = `Speranza di vita`, col = Sesso,
+             dataid = anno, tooltip = `Speranza di vita`)) +
+  geom_path(aes(group = Sesso)) +
+  geom_point_interactive(alpha = 0) +
+  labs(title = 'Speranza di vita alla nascita') +
+  theme(legend.position = 'bottom',
+        panel.background = element_blank(),
+        panel.grid = element_line(colour = 'gray90'),
+        legend.title = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title = element_blank()
+        )
+
+## Speranza di vita a 65 anni per sesso
+umbe65 <- umbMort |> 
+  filter(Sesso == 'Maschi' & Età == 65 | Sesso == 'Femmine' & Età == 65) |> 
+  ggplot(aes(x = anno, y = `Speranza di vita`, col = Sesso,
+             dataid = anno, tooltip = `Speranza di vita`)) +
+  geom_path(aes(group = Sesso)) +
+  geom_point_interactive(alpha = 0) +
+  labs(title = 'Speranza di vita a 65 anni') +
+  theme(legend.position = 'bottom',
+        panel.background = element_blank(),
+        panel.grid = element_line(colour = 'gray90'),
+        legend.title = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title = element_blank())
+
+## Probabilità di morte alla nascita per sesso
+umbq0 <- umbMort |> 
+  filter(Sesso == 'Maschi' & Età == 0 | Sesso == 'Femmine' & Età == 0) |> 
+  ggplot(aes(x = anno, y = `Probabilità di morte (per mille)`,
+             col = Sesso, dataid = anno, tooltip = `Probabilità di morte (per mille)`)) +
+  geom_path(aes(group = Sesso)) +
+  geom_point_interactive(alpha = 0) +
+  labs(title = 'Probabilità di morte alla nascita') +
+  theme(legend.position = 'bottom',
+        panel.background = element_blank(),
+        panel.grid = element_line(colour = 'gray90'),
+        legend.title = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title = element_blank())
+
+## Patchwork
+### Umbria
+girafe(ggobj = umbe0 + umbe65 + umbq0 +
+  plot_layout(guides = 'collect', axes = 'collect') +
+  plot_annotation(caption = 'Regione Umbria, Dati Demo.Istat',
+                  theme = theme(plot.title = element_text(size = 18),
+        plot.subtitle = element_text(size = 12),)) & theme(legend.position = 'bottom'),
+  options = list(
+         opts_tooltip(css = 'background-color:white;
+                      color:black;
+                      font-family:Helvetica;
+                      font-style:empty;
+                      padding:8px;
+                      border-radius:10px;
+                      background:rgba(255, 255, 255, 0.8);'),
+         opts_hover(css = ''),
+         opts_hover_inv(css = "opacity:0.3;"),
+         opts_toolbar(position = 'bottomleft'),
+         opts_zoom(min = .7, max = 6)))
+```
+
+## Curva dei sopravviventi per età
+
+```{r}
+#| label: 'Curva sopravviventi anno per anno'
+### Umbria ----
+umbMort |> 
+  filter(Sesso != 'Maschi e femmine') |> 
+  filter(anno == 1974 | anno == 1994 | anno == 2014) |>
+  ggplot(aes(x = Età, y = Sopravviventi, linetype = anno, group = anno)) +
+  geom_line() +
+  facet_wrap(~Sesso) +
+  labs(title = 'Curva di sopravviventi per anno',
+       subtitle = 'Regione Umbria',
+       caption = 'Dati Demo.Istat') +
+  theme(legend.position = 'bottom',
+        plot.title = element_text(size = 18),
+        plot.subtitle = element_text(size = 12),
+        strip.text = element_text(size = 12),
+        panel.background = element_blank(),
+        panel.grid = element_line(colour = 'gray90'),
+        legend.title = element_blank(),
+        strip.background = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title = element_blank())
+```

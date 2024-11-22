@@ -1,0 +1,480 @@
+---
+title: "Umbria"
+author:
+  - name: 'Lorenzo Mattioli'
+    affiliations:
+     - name: 'Alma Mater Studiorum - Università di Bologna'
+       department: 'Dipartimento di Scienze Politiche e Sociali - SPS'
+format:
+  docx:
+    reference-doc: custom-reference-doc.docx
+    toc: true
+    toc-expand: 2
+    number-sections: true
+editor: visual
+execute: 
+  warning: false
+  echo: false
+fig-width: 12
+fig-asp: 0.4
+bibliography: references.bib
+---
+
+# Tendenze demografiche nella Cina del 2024
+
+Dopo un drastico calo della fecondità, la Cina si trova ormai in una condizione di stallo demografico. Un'interessante fattore alla base di questo fenomeno è la generale diminuzione del numero di matrimoni, che verrà discussa nel primo paragrafo (basato su *Sposarsi in Cina? Forse sì, forse no*, P. Farina). L'arrestarsi della *corsa* demografica che aveva caratterizzato la popolazione cinese non implica però necessariamente l'aprirsi di una stagione di regressione economica. Come sottolinea Feng Wang in *Should or should not China be afraid of population decline?*, il fattore economico lavoro non è l’unico presente nella funzione di produzione di un paese, e lo stesso fattore lavoro non è composto della sola quantità di ore lavorate. Le implicazioni economiche dello stallo demografico cinese sono sviscerate dal secondo paragrafo in poi.
+
+## Matrimonio e fecondità
+
+In Cina si registra una generalizzata crisi dell’istituzione del matrimonio. Il primo fattore problematico è la preferenza per i maschi: lo squilibrio demografico è sempre a loro favore, ma raggiunge le proporzioni più drammatiche nella fascia di età compresa fra i 10 e i 20 anni, dove il rapporto è intorno ai 118 maschi ogni 100 femmine. Una tale eccedenza di uomini (17 milioni in più in età 20-40, 2021) dovrebbe teoricamente comportare quantomeno una maggiore facilità per le donne nello scegliere un partner soddisfacente. Tuttavia, una popolazione femminile più istruita e finanziariamente indipendente si trova sempre più di frequente a ritardare il momento di convolare a nozze. Che il tracollo del numero di matrimoni sia dovuto anche a motivi culturali è dimostrato anche dalle numerose discussioni online in cui donne celibi danno delle “asine” a coloro che si caricano delle responsabilità familiari. Un matrimonio che tarda a lasciarsi alle spalle le tradizioni patriarcali più perniciose non rappresenta certo l’obiettivo di vita di una popolazione femminile finalmente emancipata.
+
+La proliferazione di documenti ufficiosi riguardo l’espansione di diritti alle famiglie unigenitoriali, la riduzione dell’età minima per il matrimonio o il riconoscimento di unioni civili testimoniano la preoccupazione del governo riguardo il fenomeno. D'altro canto, è stato recentemente introdotto un "periodo di riflessione" di 30 giorni per le coppie che intendono divorziare, per cercare di arginare un’ondata di separazioni che rischia di velocizzare la traiettoria della Cina verso una società meno incline al matrimonio, dunque caratterizzata da livelli di fecondità ancora minori di quelli attuali.
+
+## Istruzione
+
+La popolazione cinese non è mai stata così istruita. Se già il censimento del 1982 (post-Mao) aveva evidenziato una situazione di quasi totale alfabetizzazione, si trattava pur sempre della mera capacità di leggere e scrivere. La Cina attuale si ritrova invece ad aver virtualmente raggiunto la saturazione nelle iscrizioni all’istruzione terziaria: nel 2020, le iscrizioni raggiungevano i 9,7 milioni a fronte di 10,6 milioni di nuovi nati. Anche senza un'ulteriore espansione, tutti i nati nel 2020 saranno in grado di iscriversi all’università. Il processo di allargamento dell’istruzione terziaria non è d'altro canto una novità: già nel 2020, più della metà dei cinesi di età compresa fra i 20 e i 24 anni erano in possesso di un titolo terziario. Nello stesso anno, più di un individuo su tre nella fascia di età 30-34 poteva vantare un diploma universitario. Il confronto con le stesse statistiche solo venti anni prima è impressionante: i punti percentuali si sono quintuplicati.
+
+## Salute e sopravvivenza
+
+La popolazione cinese non è mai stata così in salute. Con la promozione da paese a basso reddito a paese a reddito medio-alto, gli indicatori di salute della popolazione, così come le cause di morte sono diventate più simili a quelle dei paesi ad alto reddito. La malnutrizione ha lasciato il posto a malattie non trasmissibili, come nella maggioranza dei paesi più ecnonomicamente sviluppati. La convergenza ha coinvolto anche la mortalità in età avanzata: l’aspettativa di vita ai 65 anni è passata da poco più di 9 a quasi 18 anni. Le conseguenze economiche di più alti livelli di salute e longevità sono paragonabili a quelle dell’allargamento dell’istruzione: individui più sani sono potenzialmente produttivi più a lungo e hanno bisogni diversi dalle altre fasce d’età, dunque generano nuovi mercati.
+
+## Conclusioni
+
+La sfida posta dalla rivoluzione demografica in atto non è da sottostimare: spinta da un forte cambiamento socio-economico, la popolazione cinese esibisce ormai livelli di fecondità sempre più simili a quelli occidentali. Questa situazione configura nuove sfide, su tutte quella fiscale di sostenere un apparato di welfare più ampio. La spesa assistenziale è già raddoppiata negli ultimi venticinque anni e alcune previsioni la vedono raddoppiare di nuovo fino a raggiungere il 23% nel 2050.
+
+Il punto è che le sole dinamiche di popolazione non sono sufficienti a prevedere il futuro dell’economia cinese. Più che l’offerta di lavoro espressa meramente in quantità di ore, a dover essere analizzata nel dettaglio è l’adattabilità del modello di sviluppo cinese ad una situazione totalmente opposta a quella degli anni dell’economia pianificata maoista.
+
+In primo luogo, considerare il fattore lavoro unicamente una funzione del numero di ore lavorate sarebbe semplicistico e controproducente. Non tutto il lavoro è uguale a sé stesso: l'impennata del livello di istruzione del cinese medio a fronte di livelli di disoccupazione sotto la media (4,7% nel 2023, contro una media globale del 5% secondo la Banca Mondiale, [@worldba]) dimostra che il mercato del lavoro cinese è più che in grado di assorbire i professionisti di alto livello che l'alta formazione sforna ogni anno. Il dinamismo dell'economia cinese non deve stupire l'osservatore esterno; come mostrato plasticamente nelle fotografie di Lu Guang [@lu2021], la Cina industriale ha di fatto vissuto in cinquant'anni l'evoluzione che ha visto l'Occidente impegnato per secoli. La Cina che abbiamo di fronte oggi non è certo quella che viveva di materie prime e manifatture a basso costo. Dal trasporto elettrico alla produzione di semiconduttori, passando per i dispositivi di comunicazione, l'industria cinese ha fatto più di un salto di qualità, trovandosi oggi all'avanguardia in molti dei settori che trainano la domanda mondiale di lavoratori *high skilled*, per usare un termine tipico dell'economia internazionale.
+
+Inoltre, un'analisi del problema che si limiti a guardare ad un singolo fattore produttivo è ben più che riduttiva. Neppure un economista settecentesco avrebbe mai preso sottogamba l'importanza del fattore capitale (inteso in senso classico di mezzi di produzione, ma anche umano e conoscitivo), e uno contemporaneo non si sentirebbe certo a proprio agio a fare previsioni sulla crescita di un Paese senza prendere in considerazione i suoi rapporti con l'esterno. È anzi proprio il commercio internazionale ad essere preso come principale predittore della crescita economica in alcuni dei più interessanti studi sull'argomento (guardare, ad esempio, [@servedio2018]).
+
+La Cina del 2024 non ha certamente gli stessi connotati di quella di quarant'anni fa. La pressione demografica che l'attanaglia, però, non è altro che l'ultima di una lunga serie di sfide che finora è stata in grado di superare in pieno, seppur non senza un ingente costo umano. Ancora una volta, il suo contesto richiede alla Repubblica Popolare Cinese uno sforzo di adattamento non indifferente per non vacillare nella sua traiettoria di crescita apparentemente adamantina.
+
+# Umbria – principali indicatori demografici
+
+```{r}
+#| label: Setup
+#| echo: false
+# Pacchetti
+if (!require("pacman")) install.packages("pacman")
+library(pacman)
+p_load(ggplot2, tidyverse, readxl, patchwork, ggiraph, ggbump, gt, gtExtras)
+
+# Importazione dati
+## Età per sesso
+it00 <- readRDS('Dati/Export/it00.rds')
+it24 <- readRDS('Dati/Export/it24.rds')
+um00 <- readRDS('Dati/Export/um00.rds')
+um24 <- readRDS('Dati/Export/um24.rds')
+etadf <- readRDS('Dati/Export/etadf.rds')
+FX <- readRDS('Dati/Export/FX.rds')
+
+## Indicatori
+inddf <- readRDS('Dati/Export/inddf.rds')
+
+## Fecondità
+fecdf <- readRDS('Dati/Export/fecdf.rds')
+
+## Mortalità
+umbMort <- readRDS('Dati/Export/umbMort.rds')
+```
+
+## Introduzione
+
+882.015 residenti al 1° gennaio 2019: 13,8 per cento di 75 anni e più
+
+386.420 famiglie al 31 dicembre 2018: 30 per cento composte da una coppia con figli; 20,1 per cento da persone sole di 60 anni e oltre
+
+14,3 per cento delle famiglie e 16,3 per cento degli individui in condizioni di povertà relativa nel 2018
+
+[@datista]
+
+## Analisi della struttura per età
+
+### Piramidi delle età
+
+L'Umbria è una regione particolarmente anziana. Nel 2000 presentava, infatti, delle proporzioni di popolazione oltre ai 65 anni decisamente maggiori rispetto a quelle riscontrabili nell'interezza della popolazione italiana. Al 2024, la composizione per età della popolazione umbra ricalca più fedelmente quella nazionale, pur presentando uno sbilanciamento maggiore verso le età più avanzate.
+
+```{r}
+#| label: Piramidi delle età
+#| fig-asp: 1
+
+## Italia ----
+### 2024
+it24gg <- it24 |> 
+  filter(Sesso != 'Totale') |>
+  ggplot(aes(x = Età,
+             y = ifelse(Sesso == 'M',
+                        -`Tot per genere`, `Tot per genere`),
+             fill = Sesso)) +
+  geom_bar(stat = 'identity', width = 1) +
+  coord_flip() +
+  # scale_fill_manual(values = c('#EEC584', '#55868C')) +
+  labs(title = 'Italia 2024')
+  
+it00gg <- it00 |> 
+  filter(Sesso != 'Totale') |> 
+  ggplot(aes(x = Età,
+             y = ifelse(Sesso == 'M',
+                        -`2000`, `2000`),
+             fill = Sesso)) +
+  geom_bar(stat = 'identity', width = 1) +
+  coord_flip() +
+  # scale_fill_manual(values = c('#EEC584', '#55868C')) +
+  labs(title = 'Italia 2000')
+
+## Umbria ----
+### 2024
+um24gg <- um24 |> 
+  filter(Sesso != 'Totale') |>
+  ggplot(aes(x = Età,
+             y = ifelse(Sesso == 'M',
+                        -`Tot per genere`, `Tot per genere`),
+             fill = Sesso)) +
+  geom_bar(stat = 'identity', width = 1) +
+  coord_flip() +
+  # scale_fill_manual(values = c('#942911', '#90A583')) +
+  labs(title = 'Umbria 2024')
+
+um00gg <- um00 |> 
+  filter(Sesso != 'Totale') |> 
+  ggplot(aes(x = Età,
+             y = ifelse(Sesso == 'M',
+                        -`2000`, `2000`),
+             fill = Sesso)) +
+  geom_bar(stat = 'identity', width = 1) +
+  coord_flip() +
+  # scale_fill_manual(values = c('#942911', '#90A583')) +
+  labs(title = 'Umbria 2000')
+
+## Patchwork ----
+it00gg + um00gg + it24gg + um24gg +
+  plot_layout(guides = 'collect', axes = 'collect') +
+  plot_annotation(title = 'Piramidi delle età',
+                  caption = 'Dati Demo.Istat',
+                  theme = theme(plot.title = element_text(size = 18))) &
+  theme(legend.position = 'bottom',
+        axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        panel.background = element_blank(),
+        panel.grid = element_line(colour = 'gray90'),
+        legend.title = element_blank(),
+        plot.title.position = 'panel')
+```
+
+### Indici di popolazione
+
+La marcata anzianità della popolazione umbra può essere facilmente confermata confrontando la sua età media con quella dell'Italia intera nel 2000 e nel 2024: anche a netto di una tendenza generalizzata all'invecchiamento, la differenza tra il valore regionale e la media nazionale rimane sempre positiva. Notevole è però il fatto che l'Umbria sia nell'atto di essere *raggiunta* dal resto del Paese, con una diminuzione della distanza tra i due valori medi da 2.78 a 1.55 anni di età. Si noti che l'età media della popolazione femminile è sempre maggiore di quella maschile. Questo è principalmente dovuto a una maggiore sopravvivenza femminile in età avanzata, come riscontrabile analizzando le piramidi delle età di cui sopra.
+
+La composizione per età dell'Umbria ha anche un effetto tangibile sugli indici di dipendenza: se quello giovanile è più basso sia nel 2000 che nel 2024, quello di vecchiaia è sempre superiore all'indice calcolato sulla popolazione nazionale. L'inclemente risultato è quello di un indice di dipendenza complessivo sempre superiore alla media nazionale, con un potenziale effetto deleterio sul tessuto produttivo regionale. L'indice di vecchiaia mostra in maniera ancora più drammatica lo squilibrio tra la popolazione anziana e quella in età pre-lavorativa.
+
+Un'ultima considerazione, interessante se non altro altro a titolo di curiosità, riguarda il rapporto di mascolinità: se è vero che questi cresce quando calcolato sull'interezza della popolazione italiana, bisogna osservare come rimanga sostanzialmente stabile a livello regionale. Il motivo potrebbe essere la maggiore inerzia di una popolazione particolarmente anziana.
+
+```{r}
+#| label: Indici
+
+etadf |>
+  mutate(Anno = anno,
+         'Territorio' = geo,
+         'Femmine' = round(etaMed_F, 2),
+         'Maschi' = round(etaMed_M, 2),
+         'Totale' = round(etaMed_Totale, 2),
+         'Giovanile' = round(dipGiov, 2),
+         'Vecchiaia' = round(dipVec, 2),
+         'Complessivo' = round(dip, 2),
+         'Indice di vecchiaia' = round(vec, 2),
+         'Rapporto di mascolinità' = round(rapMasc, 2)
+         ) |> 
+  select(Territorio, Femmine, Maschi, Totale, Giovanile, Vecchiaia, Complessivo, `Indice di vecchiaia`, `Rapporto di mascolinità`) |> 
+  gt(rowname_col = 'Territorio') |> 
+  tab_stubhead(
+    label = 'Anno'
+  ) |> 
+  tab_row_group(
+    label = '2000',
+    rows = c(1,3)
+  ) |> 
+  tab_row_group(
+    label = '2024',
+    rows = c(2,4)
+  ) |> 
+  tab_header(
+    title = md('## Indici di popolazione'),
+    subtitle = md('Per **anno** e **territorio**')
+             ) |> 
+  tab_spanner(
+    label = 'Età media',
+    columns = c(Femmine, Maschi, Totale)
+  ) |> 
+  tab_spanner(
+    label = 'Indice di dipendenza',
+    columns = c(Giovanile, Vecchiaia, `Complessivo`)
+  ) |> 
+  tab_source_note(
+    source_note = 'Dati Demo.Istat'
+  ) |> 
+  cols_align(
+    align = 'center',
+    columns = 3:9
+  ) |>
+  cols_align(
+    align = 'left',
+    columns = 1:2
+  )
+```
+
+## Migrazioni
+
+Il bilancio migratorio umbro dei 22 anni fra il 2002 e il 2024 è generalmente positivo. Trainato da un incostante ma significativo fenomeno immigratorio con l'estero, il saldo migratorio totale dell'Umbria è ulteriormente maggiorato da un saldo migratorio interno generalmente positivo fino al 2013. Fra il 2013 e il 2015, l'Umbria vive l'unico periodo emigratorio della sua storia recente, per poi registrare una generale tendenza al rialzo fino ad oggi.
+
+## Saldi migratori
+
+In generale, l'andamento del saldo migratorio umbro va a pari passo con quello nazionale, caratterizzato da due picchi nel 2003 (in corrispondenza dell'introduzione della legge Bossi-Fini) e nel 2007 (anno di ulteriori sanatorie, contemporanee all'entrata della Romania nell'Unione Europea). È interessante l'avvallamento del saldo migratorio totale fra il 2018 e il 2020, indipendente dal saldo migratorio interno e da quello con l'estero. Il motivo di questo scoppiamento è con tutta probabilità dovuto a problemi definitori e di conteggio: Il saldo migratorio con l'estero non tiene conto di alcuni specifici fenomeni emigratori, su tutti i rimpatri. Nel 2018, per mezzo dei decreti sicurezza, c'è stato un notevole aumento di questo tipo di evento demografico, che ha causato lo scoppiamento di cui sopra, rientrato solamente nel 2022.
+
+```{r}
+#| label: Migrazione - serie storica
+
+inddf |> 
+  filter(var == 'Saldo migratorio con l\'estero' | var == 'Saldo migratorio interno' | var == 'Saldo migratorio') |> 
+  ggplot(aes(x = anno, y = value)) +
+  geom_line(data = ~. |> filter(Territorio == 'Italia' & var != 'Saldo migratorio interno')
+            |> filter(var == 'Saldo migratorio'), aes(linetype = var)) +
+  geom_line(data = ~. |> filter(Territorio == 'Italia' & var != 'Saldo migratorio interno')
+            |> filter(var != 'Saldo migratorio'), aes(col = var)) +
+  geom_line(data = ~. |> filter(Territorio == 'Umbria')
+            |> filter(var == 'Saldo migratorio'), aes(linetype = var)) +
+  geom_line(data = ~. |> filter(Territorio == 'Umbria')
+            |> filter(var != 'Saldo migratorio'), aes(col = var)) +
+  geom_line(data = ~. |> filter(var != 'Saldo migratorio'), aes(col = var)) +
+  geom_hline(yintercept = 0, col = 'gray60') +
+  scale_x_continuous(breaks = c(2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024)) +
+  labs(title = 'Saldi migratori',
+       subtitle = 'Serie storica 2002-2023',
+       caption = 'Dati Demo.Istat') +
+  facet_wrap(~Territorio) +
+  theme(legend.position = 'bottom',
+        panel.background = element_blank(),
+        panel.grid = element_line(colour = 'gray90'),
+        legend.title = element_blank(),
+        plot.title = element_text(size = 18),
+        plot.subtitle = element_text(size = 12),
+        strip.background = element_blank(),
+        strip.text = element_text(size = 12),
+        axis.ticks = element_blank(),
+        axis.title = element_blank())
+
+```
+
+## Fecondità
+
+Il numero di figli per donna (tasso di fecondità totale, TFT) delle madri di nazionalità italiana in Umbria partiva nel 2002 da livelli paragonabili a quelli nazionali. L'indicatore sta però calando ad un ritmo più alto rispetto alla media nazionale, configurando un fenomeno di invecchiamento ancora più pronunciato nel medio periodo.
+
+### Tasso di fecondità totale
+
+Il TFT delle madri straniere è generalmente molto più alto in termini assoluti. Anche in questo sottogruppo, però, rimane vera l'osservazione di cui sopra: il TFT calcolato sulle madri straniere in Umbria cala a ritmi sensibilmente maggiori rispetto al resto d'Italia.
+
+```{r}
+#| label: Tasso di fecondità totale
+
+fecdf |> 
+  filter(var == 'Tasso di fecondità totale, madri italiane'
+         | var == 'Tasso di fecondità totale, madri straniere'
+         | var == 'Tasso di fecondità totale, tutte le madri') |> 
+  mutate(var = gsub('Tasso di fecondità totale, m', 'M', var, fixed = T),
+         var = gsub('Tasso di fecondità totale, t', 'T', var, fixed = T)) |> 
+  ggplot(aes(x = anno, y = value)) +
+  geom_line(data = ~. |> filter(var == 'Tutte le madri'), aes(linetype = var)) +
+  geom_line(data = ~. |> filter(var != 'Tutte le madri'), aes(col = var)) +
+  labs(title = 'Tasso di fecondità totale') +
+  scale_x_continuous(breaks = c(2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2023)) +
+  labs(title = 'Tasso di fecondità totale',
+       subtitle = 'Serie storica 2002-2023',
+       caption = 'Dati Demo.Istat') +
+  facet_wrap(~Territorio) +
+  theme(legend.position = 'bottom',
+        panel.background = element_blank(),
+        panel.grid = element_line(colour = 'gray90'),
+        legend.title = element_blank(),
+        strip.background = element_blank(),
+        plot.title = element_text(size = 18),
+        plot.subtitle = element_text(size = 12),
+        strip.text = element_text(size = 12),
+        axis.ticks = element_blank(),
+        axis.title = element_blank())
+
+```
+
+### Età media al parto
+
+Forse il fattore più importante per comprendere la differenza abissale fra i TFT di cittadine italiane e straniere è l'età al primo parto. Se è vero che esiste una generalizzata tendenza verso l'alto, le madri straniere partivano nel 2002 da livelli sensibilmente più bassi (circa 27 anni contro gli oltre 30 delle madri italiane).
+
+```{r}
+#| label: Età media al parto
+
+fecdf |> 
+  filter(Territorio == 'Umbria',
+         var == 'Età media al parto, madri italiane'
+         | var == 'Età media al parto, madri straniere'
+         | var == 'Età media al parto, tutte le madri') |> 
+  mutate(var = gsub('Età media al parto, m', 'M', var, fixed = T),
+         var = gsub('Età media al parto, t', 'T', var, fixed = T)) |> 
+  ggplot(aes(x = anno, y = value)) +
+  geom_line(data = ~. |> filter(var == 'Tutte le madri'), aes(linetype = var)) +
+  geom_line(data = ~. |> filter(var != 'Tutte le madri'), aes(col = var)) +
+  labs(title = 'Età media al parto',
+       subtitle = 'Serie storica 2002-2023') +
+  scale_x_continuous(breaks = c(2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024)) +
+  facet_wrap(~Territorio) +
+  theme(legend.position = 'bottom',
+        panel.background = element_blank(),
+        panel.grid = element_line(colour = 'gray90'),
+        legend.title = element_blank(),
+        plot.title = element_text(size = 18),
+        plot.subtitle = element_text(size = 12),
+        strip.background = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title = element_blank())
+
+```
+
+La differenza nell'età media al primo parto fra madri straniere ed italiane diventa ancora più evidente quando si analizza la distribuzione di tale indice sull'asse delle età. Nonostante sia chiaramente visibile un avvicinamento fra le due categorie, le due distribuzioni differiscono fortemente per forma e posizione: quella individuata dalle età delle madri straniere ha una media chiaramente minore e presenta una maggiore curtosi verso destra.
+
+```{r}
+#| label: 'FX ita/stra'
+
+FX |>
+  filter(`Anno di evento` == 2013 | `Anno di evento` == 2023) |> 
+  ggplot(aes(x = Età, y = FX, col = citt, group = citt)) +
+  geom_line() +
+  facet_wrap(~`Anno di evento`) +
+  labs(title = 'Età media al parto per cittadinanza ed età',
+       subtitle = 'Regione Umbria',
+       caption = 'Dati Demo.Istat') +
+  theme(legend.position = 'bottom',
+        panel.background = element_blank(),
+        panel.grid = element_line(colour = 'gray90'),
+        legend.title = element_blank(),
+        plot.subtitle = element_text(size = 12),
+        plot.title = element_text(size = 18),
+        strip.background = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title = element_blank())
+```
+
+## Mortalità
+
+Ad ulteriore riprova del declino demografico della regione Umbria, si noti come la sua crescita naturale presentasse valori nettamente negativi già nel 2002. La tendenza negativa nazionale si ripropone con valori assoluti più alti anche nell'Umbria odierna, dove il valore più recente arriva al -7.0.
+
+```{r}
+#| label: Mortalità - Serie storica
+
+inddf |>
+  filter(var == 'Quoziente di mortalità' | var == 'Quoziente di natalità' | var == 'Crescita naturale') |> 
+  ggplot(aes(x = anno, y = value)) +
+  geom_line(data = ~. |> filter(var == 'Crescita naturale'), aes(linetype = var)) +
+  geom_line(data = ~. |> filter(var != 'Crescita naturale'), aes(col = var)) +
+  geom_hline(yintercept = 0, col = 'gray60') +
+  labs(title = 'Mortalità',
+       subtitle = 'Serie storica 2002-2023',
+       caption = 'Dati Demo.Istat') +
+  facet_wrap(~Territorio) +
+  scale_x_continuous(breaks = c(2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024)) +
+  theme(legend.position = 'bottom',
+        plot.title = element_text(size = 18),
+        plot.subtitle = element_text(size = 12),
+        panel.background = element_blank(),
+        panel.grid = element_line(colour = 'gray90'),
+        legend.title = element_blank(),
+        strip.background = element_blank(),
+        strip.text = element_text(size = 12),
+        axis.ticks = element_blank(),
+        axis.title = element_blank())
+```
+
+### Speranza di vita e mortalità
+
+L'evoluzione recente degli indicatori di mortalità restituisce una fotografia dello stadio finale del processo di transizione demografica: la speranza di vita alla nascita e a 65 anni cresce fino a stabilizzarsi su livelli molto alti, la probabilità di morte alla nascita crolla sotto al 2,5%. È notevole lo shock in termini di mortalità causato dalla pandemia di COVID-19: nel 2020 speranza di vita e probabilità di morte balzano indietro ai livelli dei due anni precedenti, soprattutto nella popolazione maschile.
+
+```{r}
+#| label: Mortalità
+#| width: 18
+
+## Speranza di vita alla nascita per sesso
+umbe0 <- umbMort |> 
+  filter(Sesso == 'Maschi' & Età == 0 | Sesso == 'Femmine' & Età == 0) |> 
+  ggplot(aes(x = anno, y = `Speranza di vita`, col = Sesso,
+             dataid = anno, tooltip = `Speranza di vita`)) +
+  geom_path(aes(group = Sesso)) +
+  labs(title = 'Speranza di vita alla nascita') +
+  theme(legend.position = 'bottom',
+        panel.background = element_blank(),
+        panel.grid = element_line(colour = 'gray90'),
+        legend.title = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title = element_blank())
+
+## Speranza di vita a 65 anni per sesso
+umbe65 <- umbMort |> 
+  filter(Sesso == 'Maschi' & Età == 65 | Sesso == 'Femmine' & Età == 65) |> 
+  ggplot(aes(x = anno, y = `Speranza di vita`, col = Sesso,
+             dataid = anno, tooltip = `Speranza di vita`)) +
+  geom_path(aes(group = Sesso)) +
+  labs(title = 'Speranza di vita a 65 anni') +
+  theme(legend.position = 'bottom',
+        panel.background = element_blank(),
+        panel.grid = element_line(colour = 'gray90'),
+        legend.title = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title = element_blank())
+
+## Probabilità di morte alla nascita per sesso
+umbq0 <- umbMort |> 
+  filter(Sesso == 'Maschi' & Età == 0 | Sesso == 'Femmine' & Età == 0) |> 
+  ggplot(aes(x = anno, y = `Probabilità di morte (per mille)`,
+             col = Sesso, dataid = anno, tooltip = `Probabilità di morte (per mille)`)) +
+  geom_path(aes(group = Sesso)) +
+  labs(title = 'Probabilità di morte alla nascita') +
+  theme(legend.position = 'bottom',
+        panel.background = element_blank(),
+        panel.grid = element_line(colour = 'gray90'),
+        legend.title = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title = element_blank())
+
+## Patchwork
+### Umbria
+umbe0 + umbe65 + umbq0 +
+  plot_layout(guides = 'collect', axes = 'collect') +
+  plot_annotation(caption = 'Regione Umbria, Dati Demo.Istat',
+                  theme = theme(plot.title = element_text(size = 18),
+        plot.subtitle = element_text(size = 12),)) & theme(legend.position = 'bottom')
+```
+
+### Sopravviventi per anno
+
+La *sconfitta* della mortalità è ulteriormente esemplificata dalla rappresentazione della curva di sopravviventi per anno, che approssima sempre più un rettangolo. Al diminuire della probabilità di morte per ogni età, il numero di sopravviventi rimane essenzialmente costante fino ad età molto avanzate. Le curve sembrano avvicinarsi anno dopo anno ad una sorta di *limite naturale* della vita umana, età a cui la probabilità di morte decolla e i sopravviventi diminuiscono drasticamente.
+
+```{r}
+#| label: 'Curva sopravviventi anno per anno'
+### Umbria ----
+umbMort |> 
+  filter(Sesso != 'Maschi e femmine') |> 
+  filter(anno == 1974 | anno == 1994 | anno == 2014) |>
+  ggplot(aes(x = Età, y = Sopravviventi, linetype = anno, group = anno)) +
+  geom_line() +
+  facet_wrap(~Sesso) +
+  labs(title = 'Curva di sopravviventi per anno',
+       subtitle = 'Regione Umbria',
+       caption = 'Dati Demo.Istat') +
+  theme(legend.position = 'bottom',
+        plot.title = element_text(size = 18),
+        plot.subtitle = element_text(size = 12),
+        strip.text = element_text(size = 12),
+        panel.background = element_blank(),
+        panel.grid = element_line(colour = 'gray90'),
+        legend.title = element_blank(),
+        strip.background = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title = element_blank())
+```

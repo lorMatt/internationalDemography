@@ -110,24 +110,42 @@ inddf |>
   geom_line() +
   geom_hline(yintercept = 0, col = 'gray60') +
   facet_wrap(~Territorio) +
+  scale_x_continuous(breaks = c(2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024)) +
   theme(legend.position = 'bottom',
         panel.background = element_blank(),
         panel.grid = element_line(colour = 'gray90'),
         legend.title = element_blank(),
+        strip.background = element_blank(),
         axis.ticks = element_blank(),
         axis.title = element_blank())
 
 ## Migrazione ----
 inddf |> 
   filter(var == 'Saldo migratorio con l\'estero' | var == 'Saldo migratorio interno' | var == 'Saldo migratorio') |> 
-  ggplot(aes(x = anno, y = value, col = var)) +
-  geom_line() +
+  ggplot(aes(x = anno, y = value)) +
+  geom_line(data = ~. |> filter(Territorio == 'Italia' & var != 'Saldo migratorio interno')
+            |> filter(var == 'Saldo migratorio'), aes(linetype = var)) +
+  geom_line(data = ~. |> filter(Territorio == 'Italia' & var != 'Saldo migratorio interno')
+            |> filter(var != 'Saldo migratorio'), aes(col = var)) +
+  geom_line(data = ~. |> filter(Territorio == 'Umbria')
+            |> filter(var == 'Saldo migratorio'), aes(linetype = var)) +
+  geom_line(data = ~. |> filter(Territorio == 'Umbria')
+            |> filter(var != 'Saldo migratorio'), aes(col = var)) +
+  geom_line(data = ~. |> filter(var != 'Saldo migratorio'), aes(col = var)) +
   geom_hline(yintercept = 0, col = 'gray60') +
+  scale_x_continuous(breaks = c(2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024)) +
+  labs(title = 'Trend migratori',
+       subtitle = 'Serie storica 2002-2023',
+       caption = 'Dati Demo.Istat') +
   facet_wrap(~Territorio) +
   theme(legend.position = 'bottom',
         panel.background = element_blank(),
         panel.grid = element_line(colour = 'gray90'),
         legend.title = element_blank(),
+        plot.title = element_text(size = 18),
+        plot.subtitle = element_text(size = 12),
+        strip.background = element_blank(),
+        strip.text = element_text(size = 12),
         axis.ticks = element_blank(),
         axis.title = element_blank())
 
