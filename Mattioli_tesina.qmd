@@ -22,33 +22,33 @@ bibliography: references.bib
 
 # Tendenze demografiche nella Cina del 2024
 
-Dopo un drastico calo della fecondità, la Cina si trova ormai in una condizione di stallo demografico. Un'interessante fattore alla base di questo fenomeno è la generale diminuzione del numero di matrimoni, che verrà discussa nel primo paragrafo (basato su *Sposarsi in Cina? Forse sì, forse no*, P. Farina). L'arrestarsi della *corsa* demografica che aveva caratterizzato la popolazione cinese non implica però necessariamente l'aprirsi di una stagione di regressione economica. Come sottolinea Feng Wang in *Should or should not China be afraid of population decline?*, il fattore economico lavoro non è l’unico presente nella funzione di produzione di un paese, e lo stesso fattore lavoro non è composto della sola quantità di ore lavorate. Le implicazioni economiche dello stallo demografico cinese sono sviscerate dal secondo paragrafo in poi.
+Dopo un drastico calo della fecondità, la Cina si trova ormai in una condizione di stallo demografico. Un'interessante fattore alla base di questo fenomeno è la generale diminuzione del numero di matrimoni, che verrà discussa nel primo paragrafo (basato su [@farina]). L'arrestarsi della *corsa* demografica che aveva caratterizzato la popolazione cinese non implica però necessariamente l'aprirsi di una stagione di regressione economica. Come sottolinea Feng Wang [@wang], il fattore economico lavoro non è l’unico presente nella funzione di produzione di un paese, e lo stesso fattore lavoro non è composto della sola quantità di ore lavorate. Le implicazioni economiche dello stallo demografico cinese sono sviscerate dal secondo paragrafo in poi.
 
 ## Matrimonio e fecondità
 
-In Cina si registra una generalizzata crisi dell’istituzione del matrimonio. Il primo fattore problematico è la preferenza per i maschi: lo squilibrio demografico è sempre a loro favore, ma raggiunge le proporzioni più drammatiche nella fascia di età compresa fra i 10 e i 20 anni, dove il rapporto è intorno ai 118 maschi ogni 100 femmine. Una tale eccedenza di uomini (17 milioni in più in età 20-40, 2021) dovrebbe teoricamente comportare quantomeno una maggiore facilità per le donne nello scegliere un partner soddisfacente. Tuttavia, una popolazione femminile più istruita e finanziariamente indipendente si trova sempre più di frequente a ritardare il momento di convolare a nozze. Che il tracollo del numero di matrimoni sia dovuto anche a motivi culturali è dimostrato anche dalle numerose discussioni online in cui donne celibi danno delle “asine” a coloro che si caricano delle responsabilità familiari. Un matrimonio che tarda a lasciarsi alle spalle le tradizioni patriarcali più perniciose non rappresenta certo l’obiettivo di vita di una popolazione femminile finalmente emancipata.
+In Cina si registra una generalizzata crisi dell’istituzione del matrimonio. Il primo fattore problematico è la preferenza per i maschi: lo squilibrio demografico è sempre a loro favore, ma raggiunge le proporzioni più drammatiche nella fascia di età compresa fra i 10 e i 20 anni, dove il rapporto è intorno ai 118 maschi ogni 100 femmine. Una tale eccedenza di uomini (17 milioni in più in età 20-40 al 2021) dovrebbe teoricamente comportare quantomeno una maggiore facilità per le donne all'atto di scegliere un partner soddisfacente. Tuttavia, una popolazione femminile più istruita e finanziariamente indipendente si trova sempre più di frequente a ritardare il momento di convolare a nozze in un contesto dove il matrimonio tarda a lasciarsi alle spalle le tradizioni patriarcali più perniciose. Che il tracollo del numero di matrimoni sia dovuto anche a motivi culturali è dimostrato anche dalle numerose discussioni online in cui donne celibi danno delle “asine” a coloro che si caricano delle responsabilità familiari. È evidente che il matrimonio non rappresenti l’obiettivo di vita di una popolazione femminile finalmente emancipata.
 
-La proliferazione di documenti ufficiosi riguardo l’espansione di diritti alle famiglie unigenitoriali, la riduzione dell’età minima per il matrimonio o il riconoscimento di unioni civili testimoniano la preoccupazione del governo riguardo il fenomeno. D'altro canto, è stato recentemente introdotto un "periodo di riflessione" di 30 giorni per le coppie che intendono divorziare, per cercare di arginare un’ondata di separazioni che rischia di velocizzare la traiettoria della Cina verso una società meno incline al matrimonio, dunque caratterizzata da livelli di fecondità ancora minori di quelli attuali.
+La proliferazione di documenti ufficiosi riguardo l’espansione di diritti alle famiglie unigenitoriali, la riduzione dell’età minima per il matrimonio o il riconoscimento di unioni civili testimoniano la preoccupazione del governo riguardo il fenomeno. Allo stesso tempo, è stato introdotto un "periodo di riflessione" di 30 giorni per le coppie che intendono divorziare, per cercare di arginare un’ondata di separazioni che rischia di velocizzare la traiettoria della Cina verso una società poco incline al matrimonio, dunque caratterizzata da livelli di fecondità ancora minori di quelli attuali.
 
 ## Istruzione
 
-La popolazione cinese non è mai stata così istruita. Se già il censimento del 1982 (post-Mao) aveva evidenziato una situazione di quasi totale alfabetizzazione, si trattava pur sempre della mera capacità di leggere e scrivere. La Cina attuale si ritrova invece ad aver virtualmente raggiunto la saturazione nelle iscrizioni all’istruzione terziaria: nel 2020, le iscrizioni raggiungevano i 9,7 milioni a fronte di 10,6 milioni di nuovi nati. Anche senza un'ulteriore espansione, tutti i nati nel 2020 saranno in grado di iscriversi all’università. Il processo di allargamento dell’istruzione terziaria non è d'altro canto una novità: già nel 2020, più della metà dei cinesi di età compresa fra i 20 e i 24 anni erano in possesso di un titolo terziario. Nello stesso anno, più di un individuo su tre nella fascia di età 30-34 poteva vantare un diploma universitario. Il confronto con le stesse statistiche solo venti anni prima è impressionante: i punti percentuali si sono quintuplicati.
+Ai record negativi in fatto di fecondità se ne affianca però un altro più che positivo: la popolazione cinese non è mai stata così istruita. Se già il censimento del 1982 (post-Mao) aveva evidenziato una situazione di quasi totale alfabetizzazione, la Cina attuale si ritrova ad aver virtualmente raggiunto la saturazione nelle iscrizioni all’istruzione terziaria. Nel 2020, le iscrizioni raggiungevano i 9,7 milioni a fronte di 10,6 milioni di nuovi nati. Ciò significa che, anche senza un'ulteriore espansione, tutti i nati nel 2020 saranno in grado di iscriversi all’università. Il processo di allargamento dell’istruzione terziaria non è d'altro canto una novità: già quattro anni fa più della metà dei cinesi di età compresa fra i 20 e i 24 anni erano in possesso di un titolo terziario. Nello stesso anno, più di un individuo su tre nella fascia di età 30-34 poteva vantare un diploma universitario. Il confronto con le stesse statistiche solo venti anni prima è impressionante: i punti percentuali si sono quintuplicati.
 
 ## Salute e sopravvivenza
 
-La popolazione cinese non è mai stata così in salute. Con la promozione da paese a basso reddito a paese a reddito medio-alto, gli indicatori di salute della popolazione, così come le cause di morte sono diventate più simili a quelle dei paesi ad alto reddito. La malnutrizione ha lasciato il posto a malattie non trasmissibili, come nella maggioranza dei paesi più ecnonomicamente sviluppati. La convergenza ha coinvolto anche la mortalità in età avanzata: l’aspettativa di vita ai 65 anni è passata da poco più di 9 a quasi 18 anni. Le conseguenze economiche di più alti livelli di salute e longevità sono paragonabili a quelle dell’allargamento dell’istruzione: individui più sani sono potenzialmente produttivi più a lungo e hanno bisogni diversi dalle altre fasce d’età, dunque generano nuovi mercati.
+Un'ulteriore record positivo riguarda la salute e la longevità in Cina: la popolazione cinese non è mai stata così sana. Con la promozione da paese a basso reddito a paese a reddito medio-alto, gli indicatori di salute della popolazione, così come le cause di morte sono diventate più simili a quelle dei paesi economicamente sviluppati. La malnutrizione ha lasciato posto a malattie non trasmissibili, esattamente come nei paesi più ricchi. La convergenza ha coinvolto anche la mortalità in età avanzata: l’aspettativa di vita ai 65 anni è passata da poco più di 9 a quasi 18 anni. Le conseguenze economiche di più alti livelli di salute e longevità sono paragonabili a quelle dell’allargamento dell’istruzione: individui più sani sono potenzialmente produttivi più a lungo e hanno bisogni diversi dalle altre fasce d’età, dunque generano nuovi mercati.
 
 ## Conclusioni
 
-La sfida posta dalla rivoluzione demografica in atto non è da sottostimare: spinta da un forte cambiamento socio-economico, la popolazione cinese esibisce ormai livelli di fecondità sempre più simili a quelli occidentali. Questa situazione configura nuove sfide, su tutte quella fiscale di sostenere un apparato di welfare più ampio. La spesa assistenziale è già raddoppiata negli ultimi venticinque anni e alcune previsioni la vedono raddoppiare di nuovo fino a raggiungere il 23% nel 2050.
+La sfida posta dalla rivoluzione demografica in atto non è da sottostimare: spinta da un forte cambiamento socio-economico, la popolazione cinese esibisce ormai livelli di fecondità sempre più simili a quelli occidentali. Questa situazione configura nuove sfide, su tutte quella fiscale di sostenere l'apparato di welfare per una platea più ampia. La spesa assistenziale è già raddoppiata negli ultimi venticinque anni e alcune previsioni la vedono raddoppiare di nuovo fino a raggiungere il 23% nel 2050.
 
-Il punto è che le sole dinamiche di popolazione non sono sufficienti a prevedere il futuro dell’economia cinese. Più che l’offerta di lavoro espressa meramente in quantità di ore, a dover essere analizzata nel dettaglio è l’adattabilità del modello di sviluppo cinese ad una situazione totalmente opposta a quella degli anni dell’economia pianificata maoista.
+Il punto è che le sole dinamiche di popolazione non sono sufficienti a prevedere il futuro dell’economia cinese. Più che l’offerta di lavoro espressa meramente in quantità di ore, a dover essere analizzata nel dettaglio è l’adattabilità del modello di sviluppo cinese ad una contingenza demografica e del mercato del lavoro totalmente opposta a quella degli anni dell’economia pianificata maoista.
 
-In primo luogo, considerare il fattore lavoro unicamente una funzione del numero di ore lavorate sarebbe semplicistico e controproducente. Non tutto il lavoro è uguale a sé stesso: l'impennata del livello di istruzione del cinese medio a fronte di livelli di disoccupazione sotto la media (4,7% nel 2023, contro una media globale del 5% secondo la Banca Mondiale, [@worldba]) dimostra che il mercato del lavoro cinese è più che in grado di assorbire i professionisti di alto livello che l'alta formazione sforna ogni anno. Il dinamismo dell'economia cinese non deve stupire l'osservatore esterno; come mostrato plasticamente nelle fotografie di Lu Guang [@lu2021], la Cina industriale ha di fatto vissuto in cinquant'anni l'evoluzione che ha visto l'Occidente impegnato per secoli. La Cina che abbiamo di fronte oggi non è certo quella che viveva di materie prime e manifatture a basso costo. Dal trasporto elettrico alla produzione di semiconduttori, passando per i dispositivi di comunicazione, l'industria cinese ha fatto più di un salto di qualità, trovandosi oggi all'avanguardia in molti dei settori che trainano la domanda mondiale di lavoratori *high skilled*, per usare un termine tipico dell'economia internazionale.
+In primo luogo, considerare il fattore lavoro unicamente una funzione del numero di ore lavorate sarebbe semplicistico e controproducente. Non tutto il lavoro è uguale a sé stesso: l'impennata del livello di istruzione del cinese medio a fronte di livelli di disoccupazione sotto la media (4,7% nel 2023, contro una media globale del 5% secondo la Banca Mondiale, [@worldba]) dimostra che il mercato del lavoro cinese è più che in grado di assorbire i professionisti di alto livello che l'alta formazione sforna ogni anno. Il dinamismo dell'economia cinese non deve stupire l'osservatore esterno; come mostrato plasticamente nelle fotografie di Lu Guang [@lu2021], la Cina industriale ha di fatto vissuto in cinquant'anni l'evoluzione che ha visto l'Occidente impegnato per secoli. La Cina che abbiamo di fronte oggi non è certo quella che viveva dell'esportazione di materie prime e manifatture a basso costo. Dal trasporto elettrico alla produzione di semiconduttori, passando per i dispositivi di comunicazione, l'industria cinese ha fatto più di un salto di qualità, trovandosi oggi all'avanguardia in molti dei settori che trainano la domanda mondiale di lavoratori *high-skilled*, per usare un termine caro agli studiosi di economia internazionale.
 
-Inoltre, un'analisi del problema che si limiti a guardare ad un singolo fattore produttivo è ben più che riduttiva. Neppure un economista settecentesco avrebbe mai preso sottogamba l'importanza del fattore capitale (inteso in senso classico di mezzi di produzione, ma anche umano e conoscitivo), e uno contemporaneo non si sentirebbe certo a proprio agio a fare previsioni sulla crescita di un Paese senza prendere in considerazione i suoi rapporti con l'esterno. È anzi proprio il commercio internazionale ad essere preso come principale predittore della crescita economica in alcuni dei più interessanti studi sull'argomento (guardare, ad esempio, [@servedio2018]).
+Inoltre, un'analisi del problema che si limiti a guardare ad un singolo fattore produttivo è ben più che riduttiva. Neppure un economista settecentesco avrebbe considerato saggio trascurare l'importanza del fattore capitale (inteso in senso classico di mezzi di produzione, ma anche umano e conoscitivo), e uno contemporaneo non si sentirebbe certo a proprio agio a fare previsioni sulla crescita di un Paese senza prendere in considerazione i suoi rapporti con l'esterno. È anzi proprio il commercio internazionale ad essere preso come principale predittore della crescita economica in alcuni dei più interessanti studi sull'argomento (guardare, ad esempio, [@servedio2018]).
 
-La Cina del 2024 non ha certamente gli stessi connotati di quella di quarant'anni fa. La pressione demografica che l'attanaglia, però, non è altro che l'ultima di una lunga serie di sfide che finora è stata in grado di superare in pieno, seppur non senza un ingente costo umano. Ancora una volta, il suo contesto richiede alla Repubblica Popolare Cinese uno sforzo di adattamento non indifferente per non vacillare nella sua traiettoria di crescita apparentemente adamantina.
+La Cina del 2024 non ha certamente gli stessi connotati di quella di quarant'anni fa. La pressione demografica che l'attanaglia, però, non è altro che l'ultima di una lunga serie di sfide economiche che finora è stata in grado di superare in pieno, pur pagandone l'ingente costo umano. Ancora una volta, il suo contesto richiede alla Repubblica Popolare Cinese uno sforzo di adattamento non indifferente per non vacillare nella sua traiettoria di crescita apparentemente adamantina.
 
 # Umbria – principali indicatori demografici
 
@@ -81,15 +81,19 @@ umbMort <- readRDS('Dati/Export/umbMort.rds')
 
 ## Introduzione
 
-L'Umbria è una regione di dimensioni moderate del Centro Italia. Al 1° gennaio 2019, la popolazione umbra ammontava a 882.015 residenti. Di questi, il 13,8% aveva almeno 75 anni [@datista]. La regione Umbria è . Resa celebre dal proprio patrimonio naturalistico, artistico e culturale, nonché per la curiosa condizione di unica regione dell'Italia centrale a non avere alcun affaccio sul mare, l'Umbria è un perfetto caso di studio per la demografia. L'evoluzione della struttura per età della popolazione umbra ha anticipato in un certo qual modo le dinamiche che hanno poi caratterizzato quella italiana nella sua interezza.
+L'Umbria è una regione di dimensioni moderate del Centro Italia. Al 1° gennaio 2019, la popolazione umbra ammontava a 882.015 residenti. Di questi, il 13,8% aveva almeno 75 anni [@datista]. Resa celebre dal proprio patrimonio naturalistico, artistico e culturale, nonché per la curiosa condizione di unica regione dell'Italia centrale a non avere alcun affaccio sul mare, l'Umbria è un perfetto caso di studio per la demografia. L'evoluzione della struttura per età della popolazione umbra ha anticipato in un certo qual modo le dinamiche che hanno poi caratterizzato quella italiana nella sua interezza.
 
-Nei successivi paragrafi, la popolazione umbra verrà messa sotto il microscopio. Dopo una prima analisi descrittiva della struttura per età, verranno presi in esame i principali indicatori riguardo migrazione, fecondità e mortalità. Per ottenere una maggiore profondità dell'indagine, verranno calcolati anche indici specifici per età e gruppi sociali (cittadini italiani e stranieri).
+Un fattore da tenere a mente è che le dinamiche di popolazione che in questo documento sono considerate a livello regionale sono in realtà valori medi di una situazione fortemente diseguale. Un diffuso fenomeno di abbandono e migrazione interna del (pede-)montano e delle campagne da parte delle fasce giovani della popolazione ha comportato negli ultimi anni la concentrazione degli individui più anziani nelle aree rurali.
+
+![Fonte: [@istat2019]](images/Screenshot 2024-11-24 alle 17.18.18.png)
+
+Nei successivi paragrafi, la popolazione umbra verrà messa sotto il microscopio. Dopo una prima analisi descrittiva della struttura per età, verranno presi in esame i principali indicatori riguardo migrazione, fecondità e mortalità. Per ottenere una maggiore profondità dell'indagine, verranno calcolati anche indici specifici per età e gruppi sociali (cittadini italiani e stranieri). I dati utilizzati sono estratti da [@demo-s].
 
 ## Analisi della struttura per età
 
 ### Piramidi delle età
 
-L'Umbria è una regione particolarmente anziana. Nel 2000 presentava, infatti, delle proporzioni di popolazione oltre ai 65 anni decisamente maggiori rispetto a quelle riscontrabili nell'interezza della popolazione italiana. Al 2024, la composizione per età della popolazione umbra ricalca più fedelmente quella nazionale, pur presentando uno sbilanciamento maggiore verso le età più avanzate.
+L'Umbria è una regione particolarmente anziana. Nel 2000 presentava, infatti, delle proporzioni di popolazione oltre ai 65 anni decisamente maggiori rispetto a quelle riscontrabili nell'interezza della popolazione italiana. Al 2024, la composizione per età della popolazione umbra ricalca più fedelmente quella nazionale. La forma della piramide risulta però sempre lievemente più spostata verso le età molto avanzate, a suggerire una sopravvivenza degli individui della terza età più elevata rispetto alla media nazionale.
 
 ```{r}
 #| label: Piramidi delle età
@@ -105,7 +109,7 @@ it24gg <- it24 |>
              fill = Sesso)) +
   geom_bar(stat = 'identity', width = 1) +
   coord_flip() +
-  # scale_fill_manual(values = c('#EEC584', '#55868C')) +
+  scale_fill_manual(values = c('#A4D1CA', '#148068')) +
   labs(title = 'Italia 2024')
   
 it00gg <- it00 |> 
@@ -116,7 +120,7 @@ it00gg <- it00 |>
              fill = Sesso)) +
   geom_bar(stat = 'identity', width = 1) +
   coord_flip() +
-  # scale_fill_manual(values = c('#EEC584', '#55868C')) +
+  scale_fill_manual(values = c('#A4D1CA', '#148068')) +
   labs(title = 'Italia 2000')
 
 ## Umbria ----
@@ -129,7 +133,7 @@ um24gg <- um24 |>
              fill = Sesso)) +
   geom_bar(stat = 'identity', width = 1) +
   coord_flip() +
-  # scale_fill_manual(values = c('#942911', '#90A583')) +
+  scale_fill_manual(values = c('#A4D1CA', '#148068')) +
   labs(title = 'Umbria 2024')
 
 um00gg <- um00 |> 
@@ -140,7 +144,7 @@ um00gg <- um00 |>
              fill = Sesso)) +
   geom_bar(stat = 'identity', width = 1) +
   coord_flip() +
-  # scale_fill_manual(values = c('#942911', '#90A583')) +
+  scale_fill_manual(values = c('#A4D1CA', '#148068')) +
   labs(title = 'Umbria 2000')
 
 ## Patchwork ----
@@ -161,7 +165,7 @@ it00gg + um00gg + it24gg + um24gg +
 
 ### Indici di popolazione
 
-La marcata anzianità della popolazione umbra può essere facilmente confermata confrontando la sua età media con quella dell'Italia intera nel 2000 e nel 2024: anche a netto di una tendenza generalizzata all'invecchiamento, la differenza tra il valore regionale e la media nazionale rimane sempre positiva. Notevole è però il fatto che l'Umbria sia nell'atto di essere *raggiunta* dal resto del Paese, con una diminuzione della distanza tra i due valori medi da 2.78 a 1.55 anni di età. Si noti che l'età media della popolazione femminile è sempre maggiore di quella maschile. Questo è principalmente dovuto a una maggiore sopravvivenza femminile in età avanzata, come riscontrabile analizzando le piramidi delle età di cui sopra.
+La particolare anzianità della popolazione umbra si riscontra immediatamente confrontando l'età media regionale con quella dell'Italia intera nell'ultimo venticinquennio: anche a netto di una tendenza generalizzata all'invecchiamento, la differenza tra il valore regionale e la media nazionale rimane sempre positiva. Notevole è però il fatto che l'Umbria sia nell'atto di essere *raggiunta* dal resto del Paese, con una diminuzione della distanza tra i due valori medi totali da 2,78 a 1,55 anni. Si noti che l'età media della popolazione femminile è sempre maggiore di quella maschile. Questo è principalmente dovuto a una maggiore sopravvivenza femminile in età avanzata, come riscontrabile analizzando le piramidi delle età di cui sopra.
 
 La composizione per età dell'Umbria ha anche un effetto tangibile sugli indici di dipendenza: se quello giovanile è più basso sia nel 2000 che nel 2024, quello di vecchiaia è sempre superiore all'indice calcolato sulla popolazione nazionale. L'inclemente risultato è quello di un indice di dipendenza complessivo sempre superiore alla media nazionale, con un potenziale effetto deleterio sul tessuto produttivo regionale. L'indice di vecchiaia mostra in maniera ancora più drammatica lo squilibrio tra la popolazione anziana e quella in età pre-lavorativa.
 
@@ -222,11 +226,11 @@ etadf |>
 
 ## Migrazioni
 
-Il bilancio migratorio umbro dei 22 anni fra il 2002 e il 2024 è generalmente positivo. Trainato da un incostante ma significativo fenomeno immigratorio con l'estero, il saldo migratorio totale dell'Umbria è ulteriormente maggiorato da un saldo migratorio interno generalmente positivo fino al 2013. Fra il 2013 e il 2015, l'Umbria vive l'unico periodo emigratorio della sua storia recente, per poi registrare una generale tendenza al rialzo fino ad oggi.
+Il bilancio migratorio umbro durante i 22 anni fra il 2002 e il 2024 è generalmente positivo. Trainato da un incostante ma considerevole fenomeno immigratorio con l'estero, il saldo migratorio totale dell'Umbria è ulteriormente maggiorato da un saldo interno mediamente positivo fino al 2013. Fra il 2013 e il 2015, l'Umbria vive l'unico periodo emigratorio della sua storia recente, per poi registrare una generale tendenza al rialzo fino ad oggi.
 
 ### Saldi migratori
 
-In generale, l'andamento del saldo migratorio umbro va a pari passo con quello nazionale, caratterizzato da due picchi nel 2003 (in corrispondenza dell'introduzione della legge Bossi-Fini) e nel 2007 (anno di ulteriori sanatorie, contemporanee all'entrata della Romania nell'Unione Europea). È interessante l'avvallamento del saldo migratorio totale fra il 2018 e il 2020, indipendente dal saldo migratorio interno e da quello con l'estero. Il motivo di questo scoppiamento è con tutta probabilità dovuto a problemi definitori e di conteggio: Il saldo migratorio con l'estero non tiene conto di alcuni specifici fenomeni emigratori, su tutti i rimpatri. Nel 2018, per mezzo dei decreti sicurezza, c'è stato un notevole aumento di questo tipo di evento demografico, che ha causato lo scoppiamento di cui sopra, rientrato solamente nel 2022.
+In generale, l'andamento del saldo migratorio umbro va di pari passo con quello nazionale, caratterizzato da due picchi nel 2003 (in corrispondenza dell'introduzione della legge Bossi-Fini) e nel 2007 (anno di ulteriori sanatorie, contemporanee all'entrata della Romania nell'Unione Europea). È interessante l'avvallamento del saldo migratorio totale fra il 2018 e il 2020, indipendente dal saldo migratorio interno e da quello con l'estero. Il motivo di questo scoppiamento è con tutta probabilità dovuto a problemi definitori e di conteggio: Il saldo migratorio con l'estero non tiene conto di alcuni specifici fenomeni emigratori, su tutti i rimpatri. Nel 2018, per mezzo dei decreti sicurezza, c'è stato un notevole aumento di questo tipo di evento demografico, che potrebbe aver contribuito a causare lo scoppiamento di cui sopra, rientrato solamente nel 2022.
 
 ```{r}
 #| label: Migrazione - serie storica
@@ -245,6 +249,8 @@ inddf |>
   geom_line(data = ~. |> filter(var != 'Saldo migratorio'), aes(col = var)) +
   geom_hline(yintercept = 0, col = 'gray60') +
   scale_x_continuous(breaks = c(2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024)) +
+  scale_color_manual(values = c('#803014', '#148068')) +
+  scale_linetype_manual(values = 'dashed') +
   labs(title = 'Saldi migratori',
        subtitle = 'Serie storica 2002-2023',
        caption = 'Dati Demo.Istat') +
@@ -284,6 +290,8 @@ fecdf |>
   geom_line(data = ~. |> filter(var != 'Tutte le madri'), aes(col = var)) +
   labs(title = 'Tasso di fecondità totale') +
   scale_x_continuous(breaks = c(2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2023)) +
+  scale_color_manual(values = c('#803014', '#148068')) +
+  scale_linetype_manual(values = 'dashed') +
   labs(title = 'Tasso di fecondità totale',
        subtitle = 'Serie storica 2002-2023',
        caption = 'Dati Demo.Istat') +
@@ -303,7 +311,7 @@ fecdf |>
 
 ### Età media al parto
 
-Forse il fattore più importante per comprendere la differenza abissale fra i TFT di cittadine italiane e straniere è l'età al primo parto. Se è vero che esiste una generalizzata tendenza verso l'alto, le madri straniere partivano nel 2002 da livelli sensibilmente più bassi (circa 27 anni contro gli oltre 30 delle madri italiane).
+Forse il fattore più importante per comprendere la differenza abissale fra i TFT di cittadine italiane e straniere è l'età al primo parto. Se è vero che esiste una generalizzata tendenza ad avere figli più tardi, le madri straniere partivano nel 2002 da livelli sensibilmente più bassi di questo indicatore (circa 27 anni contro gli oltre 30 delle madri italiane).
 
 ```{r}
 #| label: Età media al parto
@@ -318,6 +326,8 @@ fecdf |>
   ggplot(aes(x = anno, y = value)) +
   geom_line(data = ~. |> filter(var == 'Tutte le madri'), aes(linetype = var)) +
   geom_line(data = ~. |> filter(var != 'Tutte le madri'), aes(col = var)) +
+  scale_color_manual(values = c('#803014', '#148068')) +
+  scale_linetype_manual(values = 'dashed') +
   labs(title = 'Età media al parto',
        subtitle = 'Serie storica 2002-2023') +
   scale_x_continuous(breaks = c(2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024)) +
@@ -344,6 +354,7 @@ FX |>
   ggplot(aes(x = Età, y = FX, col = citt, group = citt)) +
   geom_line() +
   facet_wrap(~`Anno di evento`) +
+  scale_color_manual(values = c('#803014', '#148068')) +
   labs(title = 'Età media al parto per cittadinanza ed età',
        subtitle = 'Regione Umbria',
        caption = 'Dati Demo.Istat') +
@@ -360,7 +371,7 @@ FX |>
 
 ## Mortalità
 
-Ad ulteriore riprova del declino demografico della regione Umbria, si noti come la sua crescita naturale presentasse valori nettamente negativi già nel 2002. La tendenza negativa nazionale si ripropone con valori assoluti più alti anche nell'Umbria odierna, dove il valore più recente arriva al -7.0.
+Ad ulteriore riprova del declino demografico della regione Umbria, si noti come la sua crescita naturale assumesse valori nettamente negativi già nel 2002. La tendenza negativa nazionale si ripropone con valori assoluti più alti anche nell'Umbria odierna, dove il valore più recente arriva al -7,0.
 
 ```{r}
 #| label: Mortalità - Serie storica
@@ -371,6 +382,8 @@ inddf |>
   geom_line(data = ~. |> filter(var == 'Crescita naturale'), aes(linetype = var)) +
   geom_line(data = ~. |> filter(var != 'Crescita naturale'), aes(col = var)) +
   geom_hline(yintercept = 0, col = 'gray60') +
+  scale_color_manual(values = c('#803014', '#148068')) +
+  scale_linetype_manual(values = 'dashed') +
   labs(title = 'Mortalità',
        subtitle = 'Serie storica 2002-2023',
        caption = 'Dati Demo.Istat') +
@@ -402,6 +415,7 @@ umbe0 <- umbMort |>
   ggplot(aes(x = anno, y = `Speranza di vita`, col = Sesso,
              dataid = anno, tooltip = `Speranza di vita`)) +
   geom_path(aes(group = Sesso)) +
+  scale_color_manual(values = c('#803014', '#148068')) +
   labs(title = 'Speranza di vita alla nascita') +
   theme(legend.position = 'bottom',
         panel.background = element_blank(),
@@ -416,6 +430,7 @@ umbe65 <- umbMort |>
   ggplot(aes(x = anno, y = `Speranza di vita`, col = Sesso,
              dataid = anno, tooltip = `Speranza di vita`)) +
   geom_path(aes(group = Sesso)) +
+  scale_color_manual(values = c('#803014', '#148068')) +
   labs(title = 'Speranza di vita a 65 anni') +
   theme(legend.position = 'bottom',
         panel.background = element_blank(),
@@ -449,7 +464,7 @@ umbe0 + umbe65 + umbq0 +
 
 ### Sopravviventi per anno
 
-La *sconfitta* della mortalità è ulteriormente esemplificata dalla rappresentazione della curva di sopravviventi per anno, che approssima sempre più un rettangolo. Al diminuire della probabilità di morte per ogni età, il numero di sopravviventi rimane essenzialmente costante fino ad età molto avanzate. Le curve sembrano avvicinarsi anno dopo anno ad una sorta di *limite naturale* della vita umana, età a cui la probabilità di morte decolla e i sopravviventi diminuiscono drasticamente.
+La *sconfitta* della mortalità è ulteriormente esemplificata dalla rappresentazione della curva di sopravviventi per anno, che approssima sempre più un rettangolo. Al diminuire della probabilità di morte nella terza età, il numero di sopravviventi rimane essenzialmente costante fino a molto tardi. Le curve sembrano avvicinarsi anno dopo anno ad una sorta di *limite naturale* della vita umana, età a cui la probabilità di morte decolla e i sopravviventi diminuiscono drasticamente.
 
 ```{r}
 #| label: 'Curva sopravviventi anno per anno'

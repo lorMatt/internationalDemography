@@ -12,7 +12,8 @@ toc-expand: 2
 format:
   html:
     repo: 'https://github.com/lorMatt/internationalDemography.git'
-    code-tools: true
+    code-tools:
+      source: true
     self-contained: true
     code-fold: true
 editor: visual
@@ -53,15 +54,19 @@ umbMort <- readRDS('Dati/Export/umbMort.rds')
 
 # Introduzione
 
-L'Umbria è una regione di dimensioni moderate del Centro Italia. Al 1° gennaio 2019, la popolazione umbra ammontava a 882.015 residenti. Di questi, il 13,8% aveva almeno 75 anni [@datista]. La regione Umbria è . Resa celebre dal proprio patrimonio naturalistico, artistico e culturale, nonché per la curiosa condizione di unica regione dell'Italia centrale a non avere alcun affaccio sul mare, l'Umbria è un perfetto caso di studio per la demografia. L'evoluzione della struttura per età della popolazione umbra ha anticipato in un certo qual modo le dinamiche che hanno poi caratterizzato quella italiana nella sua interezza.
+L'Umbria è una regione di dimensioni moderate del Centro Italia. Al 1° gennaio 2019, la popolazione umbra ammontava a 882.015 residenti. Di questi, il 13,8% aveva almeno 75 anni [@istat2019]. Resa celebre dal proprio patrimonio naturalistico, artistico e culturale, nonché per la curiosa condizione di unica regione dell'Italia centrale a non avere alcun affaccio sul mare, l'Umbria è un perfetto caso di studio per la demografia. L'evoluzione della struttura per età della popolazione umbra ha anticipato in un certo qual modo le dinamiche che hanno poi caratterizzato quella italiana nella sua interezza.
 
-Nei successivi paragrafi, la popolazione umbra verrà messa sotto il microscopio. Dopo una prima analisi descrittiva della struttura per età, verranno presi in esame i principali indicatori riguardo migrazione, fecondità e mortalità. Allo scopo di ottenere una maggiore profondità di indagine, verranno calcolati anche indici specifici per età e gruppi sociali (cittadini italiani e stranieri).
+Un fattore da tenere a mente è che le dinamiche di popolazione che in questo documento sono considerate a livello regionale sono in realtà valori medi di una situazione fortemente diseguale. Un diffuso fenomeno di abbandono e migrazione interna del (pede-)montano e delle campagne da parte delle fasce giovani della popolazione ha comportato negli ultimi anni la concentrazione degli individui più anziani nelle aree rurali.
+
+![Fonte: [@istat2019]](images/Screenshot 2024-11-24 alle 17.18.18.png){alt="Fonte: ISTAT, Rilevazione sulla popolazione residente comunale per sesso, anno di nascita e stato civile; Istat, Confini delle unità amministrative e basi territoriali"}
+
+Nei successivi paragrafi, la popolazione umbra verrà messa sotto il microscopio. Dopo una prima analisi descrittiva della struttura per età, verranno presi in esame i principali indicatori riguardo migrazione, fecondità e mortalità. Allo scopo di ottenere una maggiore profondità di indagine, verranno calcolati anche indici specifici per età e gruppi sociali (cittadini italiani e stranieri). I dati utilizzati sono estratti da [@demo-s].
 
 # Analisi della struttura per età
 
 ## Piramidi delle età
 
-L'Umbria è una regione particolarmente anziana. Nel 2000 presentava, infatti, delle proporzioni di popolazione oltre ai 65 anni decisamente maggiori rispetto a quelle riscontrabili nell'interezza della popolazione italiana. Al 2024, la composizione per età della popolazione umbra ricalca più fedelmente quella nazionale, pur presentando uno sbilanciamento maggiore verso le età più avanzate.
+L'Umbria è una regione particolarmente anziana. Nel 2000 presentava, infatti, delle proporzioni di popolazione oltre ai 65 anni decisamente maggiori rispetto a quelle riscontrabili nell'interezza della popolazione italiana. Al 2024, la composizione per età della popolazione umbra ricalca più fedelmente quella nazionale. La forma della piramide risulta però sempre lievemente più spostata verso le età molto avanzate, a suggerire una sopravvivenza degli individui della terza età più elevata rispetto alla media nazionale.
 
 ```{r}
 #| label: Piramidi delle età
@@ -77,7 +82,7 @@ it24gg <- it24 |>
              fill = Sesso)) +
   geom_bar(stat = 'identity', width = 1) +
   coord_flip() +
-  # scale_fill_manual(values = c('#EEC584', '#55868C')) +
+  scale_fill_manual(values = c('#A4D1CA', '#148068')) +
   labs(title = 'Italia 2024')
   
 it00gg <- it00 |> 
@@ -88,7 +93,7 @@ it00gg <- it00 |>
              fill = Sesso)) +
   geom_bar(stat = 'identity', width = 1) +
   coord_flip() +
-  # scale_fill_manual(values = c('#EEC584', '#55868C')) +
+  scale_fill_manual(values = c('#A4D1CA', '#148068')) +
   labs(title = 'Italia 2000')
 
 ## Umbria ----
@@ -101,7 +106,7 @@ um24gg <- um24 |>
              fill = Sesso)) +
   geom_bar(stat = 'identity', width = 1) +
   coord_flip() +
-  # scale_fill_manual(values = c('#942911', '#90A583')) +
+  scale_fill_manual(values = c('#A4D1CA', '#148068')) +
   labs(title = 'Umbria 2024')
 
 um00gg <- um00 |> 
@@ -112,7 +117,7 @@ um00gg <- um00 |>
              fill = Sesso)) +
   geom_bar(stat = 'identity', width = 1) +
   coord_flip() +
-  # scale_fill_manual(values = c('#942911', '#90A583')) +
+  scale_fill_manual(values = c('#A4D1CA', '#148068')) +
   labs(title = 'Umbria 2000')
 
 ## Patchwork ----
@@ -133,7 +138,7 @@ it00gg + um00gg + it24gg + um24gg +
 
 ## Indici di popolazione
 
-La marcata anzianità della popolazione umbra può essere facilmente confermata confrontando la sua età media con quella dell'Italia intera nel 2000 e nel 2024: anche a netto di una tendenza generalizzata all'invecchiamento, la differenza tra il valore regionale e la media nazionale rimane sempre positiva. Notevole è però il fatto che l'Umbria sia nell'atto di essere *raggiunta* dal resto del Paese, con una diminuzione della distanza tra i due valori medi da 2.78 a 1.55 anni di età. Si noti che l'età media della popolazione femminile è sempre maggiore di quella maschile. Questo è principalmente dovuto a una maggiore sopravvivenza femminile in età avanzata, come riscontrabile analizzando le piramidi delle età di cui sopra.
+La particolare anzianità della popolazione umbra si riscontra immediatamente confrontando l'età media regionale con quella dell'Italia intera nell'ultimo venticinquennio: anche a netto di una tendenza generalizzata all'invecchiamento, la differenza tra il valore regionale e la media nazionale rimane sempre positiva. Notevole è però il fatto che l'Umbria sia nell'atto di essere *raggiunta* dal resto del Paese, con una diminuzione della distanza tra i due valori medi totali da 2,78 a 1,55 anni. Si noti che l'età media della popolazione femminile è sempre maggiore di quella maschile. Questo è principalmente dovuto a una maggiore sopravvivenza femminile in età avanzata, come riscontrabile analizzando le piramidi delle età di cui sopra.
 
 ```{r}
 #| label: barplot età media
@@ -159,7 +164,7 @@ girafe(ggobj = etadf |>
   coord_flip() +
   labs(title = 'Età medie',
        caption = 'Dati Demo.Istat') +
-  scale_fill_manual(values = c('steelblue', 'deepskyblue4')) +
+  scale_fill_manual(values = c('#803014', '#148068')) +
   scale_y_continuous(expand = c(0, 0)) +
   facet_wrap(~Territorio) +
   theme(legend.position = 'bottom',
@@ -182,8 +187,7 @@ girafe(ggobj = etadf |>
                       background:rgba(255, 255, 255, 0.8);'),
          opts_hover(css = ''),
          opts_hover_inv(css = "opacity:0.3;"),
-         opts_toolbar(position = 'bottomleft'),
-         opts_zoom(min = .7, max = 6)))
+         opts_toolbar(hidden = c('selection', 'zoom', 'misc'))))
 ```
 
 La composizione per età dell'Umbria ha anche un effetto tangibile sugli indici di dipendenza: se quello giovanile è più basso sia nel 2000 che nel 2024, quello di vecchiaia è sempre superiore all'indice calcolato sulla popolazione nazionale. L'inclemente risultato è quello di un indice di dipendenza complessivo sempre superiore alla media nazionale, con un potenziale effetto deleterio sul tessuto produttivo regionale. L'indice di vecchiaia mostra in maniera ancora più drammatica lo squilibrio tra la popolazione anziana e quella in età pre-lavorativa.
@@ -212,7 +216,7 @@ girafe(ggobj = etadf |>
   coord_flip() +
   labs(title = 'Indici di indipendenza',
        caption = 'Dati Demo.Istat') +
-  scale_fill_manual(values = c('steelblue', 'deepskyblue4')) +
+  scale_fill_manual(values = c('#803014', '#148068')) +
   scale_y_continuous(expand = c(0, 0)) +
   facet_wrap(~Territorio) +
   theme(legend.position = 'bottom',
@@ -235,8 +239,7 @@ girafe(ggobj = etadf |>
                       background:rgba(255, 255, 255, 0.8);'),
          opts_hover(css = ''),
          opts_hover_inv(css = "opacity:0.3;"),
-         opts_toolbar(position = 'bottomleft'),
-         opts_zoom(min = .7, max = 6)))
+         opts_toolbar(hidden = c('selection', 'zoom', 'misc'))))
 ```
 
 Un'ultima considerazione, interessante se non altro altro a titolo di curiosità, riguarda il rapporto di mascolinità: se è vero che questi cresce quando calcolato sull'interezza della popolazione italiana, bisogna osservare come rimanga sostanzialmente stabile a livello regionale. Il motivo potrebbe essere la maggiore inerzia di una popolazione particolarmente anziana.
@@ -305,11 +308,11 @@ etadf |>
 
 # Migrazioni
 
-Il bilancio migratorio umbro dei 22 anni fra il 2002 e il 2024 è generalmente positivo. Trainato da un incostante ma significativo fenomeno immigratorio con l'estero, il saldo migratorio totale dell'Umbria è ulteriormente maggiorato da un saldo migratorio interno generalmente positivo fino al 2013. Fra il 2013 e il 2015, l'Umbria vive l'unico periodo emigratorio della sua storia recente, per poi registrare una generale tendenza al rialzo fino ad oggi.
+Il bilancio migratorio umbro durante i 22 anni fra il 2002 e il 2024 è generalmente positivo. Trainato da un incostante ma considerevole fenomeno immigratorio con l'estero, il saldo migratorio totale dell'Umbria è ulteriormente maggiorato da un saldo interno mediamente positivo fino al 2013. Fra il 2013 e il 2015, l'Umbria vive l'unico periodo emigratorio della sua storia recente, per poi registrare una generale tendenza al rialzo fino ad oggi.
 
 ## Saldi migratori
 
-In generale, l'andamento del saldo migratorio umbro va a pari passo con quello nazionale, caratterizzato da due picchi nel 2003 (in corrispondenza dell'introduzione della legge Bossi-Fini) e nel 2007 (anno di ulteriori sanatorie, contemporanee all'entrata della Romania nell'Unione Europea). È interessante l'avvallamento del saldo migratorio totale fra il 2018 e il 2020, indipendente dal saldo migratorio interno e da quello con l'estero. Il motivo di questo scoppiamento è con tutta probabilità dovuto a problemi definitori e di conteggio: Il saldo migratorio con l'estero non tiene conto di alcuni specifici fenomeni emigratori, su tutti i rimpatri. Nel 2018, per mezzo dei decreti sicurezza, c'è stato un notevole aumento di questo tipo di evento demografico, che ha causato lo scoppiamento di cui sopra, rientrato solamente nel 2022.
+In generale, l'andamento del saldo migratorio umbro va di pari passo con quello nazionale, caratterizzato da due picchi nel 2003 (in corrispondenza dell'introduzione della legge Bossi-Fini) e nel 2007 (anno di ulteriori sanatorie, contemporanee all'entrata della Romania nell'Unione Europea). È interessante l'avvallamento del saldo migratorio totale fra il 2018 e il 2020, indipendente dal saldo migratorio interno e da quello con l'estero. Il motivo di questo scoppiamento è con tutta probabilità dovuto a problemi definitori e di conteggio: Il saldo migratorio con l'estero non tiene conto di alcuni specifici fenomeni emigratori, su tutti i rimpatri. Nel 2018, per mezzo dei decreti sicurezza, c'è stato un notevole aumento di questo tipo di evento demografico, che potrebbe aver contribuito a causare lo scoppiamento di cui sopra, rientrato solamente nel 2022.
 
 ```{r}
 #| label: Migrazione - serie storica
@@ -329,6 +332,8 @@ girafe(ggobj = inddf |>
   geom_line(data = ~. |> filter(var != 'Saldo migratorio'), aes(col = var)) +
   geom_hline(yintercept = 0, col = 'gray60') +
   scale_x_continuous(breaks = c(2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024)) +
+  scale_color_manual(values = c('#803014', '#148068')) +
+  scale_linetype_manual(values = 'dashed') +
   labs(title = 'Saldi migratori',
        subtitle = 'Serie storica 2002-2023',
        caption = 'Dati Demo.Istat') +
@@ -353,8 +358,7 @@ girafe(ggobj = inddf |>
                       background:rgba(255, 255, 255, 0.8);'),
          opts_hover(css = ''),
          opts_hover_inv(css = "opacity:0.3;"),
-         opts_toolbar(position = 'bottomleft'),
-         opts_zoom(min = .7, max = 6))
+         opts_toolbar(hidden = c('selection', 'zoom', 'misc')))
   )
 
 ```
@@ -382,6 +386,8 @@ girafe(ggobj = fecdf |>
   geom_line(data = ~. |> filter(var != 'Tutte le madri'), aes(col = var)) +
   labs(title = 'Tasso di fecondità totale') +
   scale_x_continuous(breaks = c(2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2023)) +
+  scale_color_manual(values = c('#803014', '#148068')) +
+  scale_linetype_manual(values = 'dashed') +
   labs(title = 'Tasso di fecondità totale',
        subtitle = 'Serie storica 2002-2023',
        caption = 'Dati Demo.Istat') +
@@ -405,15 +411,14 @@ girafe(ggobj = fecdf |>
                       border-radius:10px;
                       background:rgba(255, 255, 255, 0.8);'),
          opts_hover(css = ''),
-         opts_toolbar(position = 'bottomleft'),
-         opts_zoom(min = .7, max = 6))
-  )
+         opts_toolbar(hidden = c('selection', 'zoom', 'misc'))
+  ))
 
 ```
 
 ## Età media al parto
 
-Forse il fattore più importante per comprendere la differenza abissale fra i TFT di cittadine italiane e straniere è l'età al primo parto. Se è vero che esiste una generalizzata tendenza verso l'alto, le madri straniere partivano nel 2002 da livelli sensibilmente più bassi (circa 27 anni contro gli oltre 30 delle madri italiane).
+Forse il fattore più importante per comprendere la differenza abissale fra i TFT di cittadine italiane e straniere è l'età al primo parto. Se è vero che esiste una generalizzata tendenza ad avere figli più tardi, le madri straniere partivano nel 2002 da livelli sensibilmente più bassi di questo indicatore (circa 27 anni contro gli oltre 30 delle madri italiane).
 
 ```{r}
 #| label: Età media al parto
@@ -429,6 +434,8 @@ girafe(ggobj = fecdf |>
   geom_point_interactive(alpha = 0) +
   geom_line(data = ~. |> filter(var == 'Tutte le madri'), aes(linetype = var)) +
   geom_line(data = ~. |> filter(var != 'Tutte le madri'), aes(col = var)) +
+  scale_color_manual(values = c('#803014', '#148068')) +
+  scale_linetype_manual(values = 'dashed') +
   labs(title = 'Età media al parto',
        subtitle = 'Serie storica 2002-2023') +
   scale_x_continuous(breaks = c(2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024)) +
@@ -451,9 +458,8 @@ girafe(ggobj = fecdf |>
                       border-radius:10px;
                       background:rgba(255, 255, 255, 0.8);'),
          opts_hover(css = ''),
-         opts_toolbar(position = 'bottomleft'),
-         opts_zoom(min = .7, max = 6))
-  )
+         opts_toolbar(hidden = c('selection', 'zoom', 'misc'))
+  ))
 ```
 
 La differenza nell'età media al primo parto fra madri straniere ed italiane diventa ancora più evidente quando si analizza la distribuzione degli indici specifici di fecondità sull'asse delle età. Nonostante sia chiaramente visibile un avvicinamento fra le due categorie, le due distribuzioni differiscono fortemente per forma e posizione: quella individuata dalle età delle madri straniere ha una media chiaramente minore e presenta una maggiore curtosi verso destra.
@@ -467,6 +473,7 @@ girafe(ggobj = FX |>
   geom_point_interactive(alpha = 0) +
   geom_line() +
   facet_wrap(~`Anno di evento`) +
+  scale_color_manual(values = c('#803014', '#148068')) +
   labs(title = 'Tassi specifici di fecondità per età',
        subtitle = 'Regione Umbria',
        caption = 'Dati Demo.Istat') +
@@ -488,14 +495,13 @@ girafe(ggobj = FX |>
                       border-radius:10px;
                       background:rgba(255, 255, 255, 0.8);'),
          opts_hover(css = ''),
-         opts_toolbar(position = 'bottomleft'),
-         opts_zoom(min = .7, max = 6))
-  )
+         opts_toolbar(hidden = c('selection', 'zoom', 'misc'))
+  ))
 ```
 
 # Mortalità
 
-Ad ulteriore riprova del declino demografico della regione Umbria, si noti come la sua crescita naturale presentasse valori nettamente negativi già nel 2002. La tendenza negativa nazionale si ripropone con valori assoluti più alti anche nell'Umbria odierna, dove il valore più recente arriva al -7.0.
+Ad ulteriore riprova del declino demografico della regione Umbria, si noti come la sua crescita naturale assumesse valori nettamente negativi già nel 2002. La tendenza negativa nazionale si ripropone con valori assoluti più alti anche nell'Umbria odierna, dove il valore più recente arriva al -7,0.
 
 ```{r}
 #| label: Mortalità - Serie storica
@@ -507,6 +513,8 @@ girafe(ggobj = inddf |>
   geom_line(data = ~. |> filter(var != 'Crescita naturale'), aes(col = var)) +
   geom_point_interactive(alpha = 0) +
   geom_hline(yintercept = 0, col = 'gray60') +
+  scale_color_manual(values = c('#803014', '#148068')) +
+  scale_linetype_manual(values = 'dashed') +
   labs(title = 'Mortalità',
        subtitle = 'Serie storica 2002-2023',
        caption = 'Dati Demo.Istat') +
@@ -532,9 +540,8 @@ girafe(ggobj = inddf |>
                       background:rgba(255, 255, 255, 0.8);'),
          opts_hover(css = ''),
          opts_hover_inv(css = "opacity:0.3;"),
-         opts_toolbar(position = 'bottomleft'),
-         opts_zoom(min = .7, max = 6))
-  )
+         opts_toolbar(hidden = c('selection', 'zoom', 'misc'))
+  ))
 ```
 
 ## Speranza di vita e mortalità
@@ -551,6 +558,7 @@ umbe0 <- umbMort |>
   ggplot(aes(x = anno, y = `Speranza di vita`, col = Sesso,
              dataid = anno, tooltip = `Speranza di vita`)) +
   geom_path(aes(group = Sesso)) +
+  scale_color_manual(values = c('#803014', '#148068')) +
   labs(title = 'Speranza di vita alla nascita') +
   theme(legend.position = 'bottom',
         panel.background = element_blank(),
@@ -565,6 +573,7 @@ umbe65 <- umbMort |>
   ggplot(aes(x = anno, y = `Speranza di vita`, col = Sesso,
              dataid = anno, tooltip = `Speranza di vita`)) +
   geom_path(aes(group = Sesso)) +
+  scale_color_manual(values = c('#803014', '#148068')) +
   labs(title = 'Speranza di vita a 65 anni') +
   theme(legend.position = 'bottom',
         panel.background = element_blank(),
@@ -579,6 +588,7 @@ umbq0 <- umbMort |>
   ggplot(aes(x = anno, y = `Probabilità di morte (per mille)`,
              col = Sesso, dataid = anno, tooltip = `Probabilità di morte (per mille)`)) +
   geom_path(aes(group = Sesso)) +
+  scale_color_manual(values = c('#803014', '#148068')) +
   labs(title = 'Probabilità di morte alla nascita') +
   theme(legend.position = 'bottom',
         panel.background = element_blank(),
@@ -604,13 +614,13 @@ girafe(ggobj = umbe0 + umbe65 + umbq0 +
                       background:rgba(255, 255, 255, 0.8);'),
          opts_hover(css = ''),
          opts_hover_inv(css = "opacity:0.3;"),
-         opts_toolbar(position = 'bottomleft'),
-         opts_zoom(min = .7, max = 6)))
+         opts_toolbar(hidden = c('selection', 'zoom', 'misc')))
+)
 ```
 
 ## Sopravviventi per anno
 
-La *sconfitta* della mortalità è ulteriormente esemplificata dalla rappresentazione della curva di sopravviventi per anno, che approssima sempre più un rettangolo. Al diminuire della probabilità di morte per ogni età, il numero di sopravviventi rimane essenzialmente costante fino ad età molto avanzate. Le curve sembrano avvicinarsi anno dopo anno ad una sorta di *limite naturale* della vita umana, età a cui la probabilità di morte decolla e i sopravviventi diminuiscono drasticamente.
+La *sconfitta* della mortalità è ulteriormente esemplificata dalla rappresentazione della curva di sopravviventi per anno, che approssima sempre più un rettangolo. Al diminuire della probabilità di morte nella terza età, il numero di sopravviventi rimane essenzialmente costante fino a molto tardi. Le curve sembrano avvicinarsi anno dopo anno ad una sorta di *limite naturale* della vita umana, età a cui la probabilità di morte decolla e i sopravviventi diminuiscono drasticamente.
 
 ```{r}
 #| label: 'Curva sopravviventi anno per anno'
@@ -621,6 +631,7 @@ umbMort |>
   ggplot(aes(x = Età, y = Sopravviventi, linetype = anno, group = anno)) +
   geom_line() +
   facet_wrap(~Sesso) +
+  scale_color_manual(values = c('#803014', '#148068')) +
   labs(title = 'Curva di sopravviventi per anno',
        subtitle = 'Regione Umbria',
        caption = 'Dati Demo.Istat') +
