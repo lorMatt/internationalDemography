@@ -10,7 +10,6 @@ format:
     reference-doc: custom-reference-doc.docx
     toc: true
     toc-expand: 2
-    number-sections: true
 editor: visual
 execute: 
   warning: false
@@ -22,7 +21,7 @@ bibliography: references.bib
 
 # Tendenze demografiche nella Cina del 2024
 
-Dopo un drastico calo della fecondità, la Cina si trova ormai in una condizione di stallo demografico. Un'interessante fattore alla base di questo fenomeno è la generale diminuzione del numero di matrimoni, che verrà discussa nel primo paragrafo (basato su [@farina]). L'arrestarsi della *corsa* demografica che aveva caratterizzato la popolazione cinese non implica però necessariamente l'aprirsi di una stagione di regressione economica. Come sottolinea Feng Wang [@wang], il fattore economico lavoro non è l’unico presente nella funzione di produzione di un paese, e lo stesso fattore lavoro non è composto della sola quantità di ore lavorate. Le implicazioni economiche dello stallo demografico cinese sono sviscerate dal secondo paragrafo in poi.
+Dopo un drastico calo della fecondità, la Cina si trova ormai in una condizione di stallo demografico. Un interessante fattore alla base di questo fenomeno è la generale diminuzione del numero di matrimoni, che verrà discussa nel primo paragrafo (basato su [@farina]). L'arrestarsi della *corsa* demografica che aveva caratterizzato la popolazione cinese non implica però necessariamente l'aprirsi di una stagione di regressione economica. Come sottolinea Feng Wang [@wang], il fattore economico lavoro non è l’unico presente nella funzione di produzione di un paese, e lo stesso fattore lavoro non è composto della sola quantità di ore lavorate. Le implicazioni economiche dello stallo demografico cinese sono approfondite dal secondo paragrafo in poi.
 
 ## Matrimonio e fecondità
 
@@ -46,7 +45,7 @@ Il punto è che le sole dinamiche di popolazione non sono sufficienti a preveder
 
 In primo luogo, considerare il fattore lavoro unicamente una funzione del numero di ore lavorate sarebbe semplicistico e controproducente. Non tutto il lavoro è uguale a sé stesso: l'impennata del livello di istruzione del cinese medio a fronte di livelli di disoccupazione sotto la media (4,7% nel 2023, contro una media globale del 5% secondo la Banca Mondiale, [@worldba]) dimostra che il mercato del lavoro cinese è più che in grado di assorbire i professionisti di alto livello che l'alta formazione sforna ogni anno. Il dinamismo dell'economia cinese non deve stupire l'osservatore esterno; come mostrato plasticamente nelle fotografie di Lu Guang [@lu2021], la Cina industriale ha di fatto vissuto in cinquant'anni l'evoluzione che ha visto l'Occidente impegnato per secoli. La Cina che abbiamo di fronte oggi non è certo quella che viveva dell'esportazione di materie prime e manifatture a basso costo. Dal trasporto elettrico alla produzione di semiconduttori, passando per i dispositivi di comunicazione, l'industria cinese ha fatto più di un salto di qualità, trovandosi oggi all'avanguardia in molti dei settori che trainano la domanda mondiale di lavoratori *high-skilled*, per usare un termine caro agli studiosi di economia internazionale.
 
-Inoltre, un'analisi del problema che si limiti a guardare ad un singolo fattore produttivo è ben più che riduttiva. Neppure un economista settecentesco avrebbe considerato saggio trascurare l'importanza del fattore capitale (inteso in senso classico di mezzi di produzione, ma anche umano e conoscitivo), e uno contemporaneo non si sentirebbe certo a proprio agio a fare previsioni sulla crescita di un Paese senza prendere in considerazione i suoi rapporti con l'esterno. È anzi proprio il commercio internazionale ad essere preso come principale predittore della crescita economica in alcuni dei più interessanti studi sull'argomento (guardare, ad esempio, [@servedio2018]).
+Inoltre, un'analisi del problema che si limiti a guardare ad un singolo fattore produttivo è ben più che riduttiva. Neppure un economista settecentesco avrebbe considerato saggio trascurare l'importanza del fattore capitale (inteso in senso classico di mezzi di produzione, ma anche umano e conoscitivo), e uno contemporaneo non si sentirebbe certo a proprio agio a fare previsioni sulla crescita di un Paese senza prendere in considerazione i suoi rapporti con l'esterno. È anzi proprio il commercio internazionale ad essere preso come principale predittore della crescita economica in alcuni dei più interessanti studi sull'argomento [@servedio2018].
 
 La Cina del 2024 non ha certamente gli stessi connotati di quella di quarant'anni fa. La pressione demografica che l'attanaglia, però, non è altro che l'ultima di una lunga serie di sfide economiche che finora è stata in grado di superare in pieno, pur pagandone l'ingente costo umano. Ancora una volta, il suo contesto richiede alla Repubblica Popolare Cinese uno sforzo di adattamento non indifferente per non vacillare nella sua traiettoria di crescita apparentemente adamantina.
 
@@ -85,7 +84,7 @@ L'Umbria è una regione di dimensioni moderate del Centro Italia. Al 1° gennaio
 
 Un fattore da tenere a mente è che le dinamiche di popolazione che in questo documento sono considerate a livello regionale sono in realtà valori medi di una situazione fortemente diseguale. Un diffuso fenomeno di abbandono e migrazione interna del (pede-)montano e delle campagne da parte delle fasce giovani della popolazione ha comportato negli ultimi anni la concentrazione degli individui più anziani nelle aree rurali.
 
-![Fonte: [@istat2019]](images/Screenshot 2024-11-24 alle 17.18.18.png)
+![Fonte: [@istat2019]](images/Screenshot%202024-11-24%20alle%2017.18.18.png)
 
 Nei successivi paragrafi, la popolazione umbra verrà messa sotto il microscopio. Dopo una prima analisi descrittiva della struttura per età, verranno presi in esame i principali indicatori riguardo migrazione, fecondità e mortalità. Per ottenere una maggiore profondità dell'indagine, verranno calcolati anche indici specifici per età e gruppi sociali (cittadini italiani e stranieri). I dati utilizzati sono estratti da [@demo-s].
 
@@ -169,7 +168,7 @@ La particolare anzianità della popolazione umbra si riscontra immediatamente co
 
 La composizione per età dell'Umbria ha anche un effetto tangibile sugli indici di dipendenza: se quello giovanile è più basso sia nel 2000 che nel 2024, quello di vecchiaia è sempre superiore all'indice calcolato sulla popolazione nazionale. L'inclemente risultato è quello di un indice di dipendenza complessivo sempre superiore alla media nazionale, con un potenziale effetto deleterio sul tessuto produttivo regionale. L'indice di vecchiaia mostra in maniera ancora più drammatica lo squilibrio tra la popolazione anziana e quella in età pre-lavorativa.
 
-Un'ultima considerazione, interessante se non altro altro a titolo di curiosità, riguarda il rapporto di mascolinità: se è vero che questi cresce quando calcolato sull'interezza della popolazione italiana, bisogna osservare come rimanga sostanzialmente stabile a livello regionale. Il motivo potrebbe essere la maggiore inerzia di una popolazione particolarmente anziana.
+Un'ultima considerazione, interessante se non altro altro a titolo di curiosità, riguarda il rapporto di mascolinità: se è vero che cresce quando calcolato sull'interezza della popolazione italiana, bisogna osservare come rimanga sostanzialmente stabile a livello regionale. Il motivo potrebbe essere la maggiore inerzia di una popolazione particolarmente anziana.
 
 ```{r}
 #| label: Indici
@@ -230,7 +229,7 @@ Il bilancio migratorio umbro durante i 22 anni fra il 2002 e il 2024 è generalm
 
 ### Saldi migratori
 
-In generale, l'andamento del saldo migratorio umbro va di pari passo con quello nazionale, caratterizzato da due picchi nel 2003 (in corrispondenza dell'introduzione della legge Bossi-Fini) e nel 2007 (anno di ulteriori sanatorie, contemporanee all'entrata della Romania nell'Unione Europea). È interessante l'avvallamento del saldo migratorio totale fra il 2018 e il 2020, indipendente dal saldo migratorio interno e da quello con l'estero. Il motivo di questo scoppiamento è con tutta probabilità dovuto a problemi definitori e di conteggio: Il saldo migratorio con l'estero non tiene conto di alcuni specifici fenomeni emigratori, su tutti i rimpatri. Nel 2018, per mezzo dei decreti sicurezza, c'è stato un notevole aumento di questo tipo di evento demografico, che potrebbe aver contribuito a causare lo scoppiamento di cui sopra, rientrato solamente nel 2022.
+In generale, l'andamento del saldo migratorio umbro va di pari passo con quello nazionale, caratterizzato da due picchi nel 2003 (in corrispondenza dell'introduzione della legge Bossi-Fini) e nel 2007 (anno di ulteriori sanatorie, contemporanee all'entrata della Romania nell'Unione Europea). È interessante l'avvallamento del saldo migratorio totale fra il 2018 e il 2020, indipendente dal saldo migratorio interno e da quello con l'estero. Il motivo di questo disacoppiamento è con tutta probabilità dovuto a problemi definitori e di conteggio: Il saldo migratorio con l'estero non tiene conto di alcuni specifici fenomeni emigratori, su tutti i rimpatri. Nel 2018, per mezzo dei decreti sicurezza, c'è stato un notevole aumento di questo tipo di evento demografico, che potrebbe aver contribuito a causare lo disacoppiamento di cui sopra, rientrato solamente nel 2022.
 
 ```{r}
 #| label: Migrazione - serie storica

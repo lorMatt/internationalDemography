@@ -58,7 +58,7 @@ L'Umbria è una regione di dimensioni moderate del Centro Italia. Al 1° gennaio
 
 Un fattore da tenere a mente è che le dinamiche di popolazione che in questo documento sono considerate a livello regionale sono in realtà valori medi di una situazione fortemente diseguale. Un diffuso fenomeno di abbandono e migrazione interna del (pede-)montano e delle campagne da parte delle fasce giovani della popolazione ha comportato negli ultimi anni la concentrazione degli individui più anziani nelle aree rurali.
 
-![Fonte: [@istat2019]](images/Screenshot 2024-11-24 alle 17.18.18.png){alt="Fonte: ISTAT, Rilevazione sulla popolazione residente comunale per sesso, anno di nascita e stato civile; Istat, Confini delle unità amministrative e basi territoriali"}
+![Fonte: ISTAT, Rilevazione sulla popolazione residente comunale per sesso, anno di nascita e stato civile; Istat, Confini delle unità amministrative e basi territoriali](images/Screenshot%202024-11-24%20alle%2017.18.18.png)
 
 Nei successivi paragrafi, la popolazione umbra verrà messa sotto il microscopio. Dopo una prima analisi descrittiva della struttura per età, verranno presi in esame i principali indicatori riguardo migrazione, fecondità e mortalità. Allo scopo di ottenere una maggiore profondità di indagine, verranno calcolati anche indici specifici per età e gruppi sociali (cittadini italiani e stranieri). I dati utilizzati sono estratti da [@demo-s].
 
@@ -164,7 +164,7 @@ girafe(ggobj = etadf |>
   coord_flip() +
   labs(title = 'Età medie',
        caption = 'Dati Demo.Istat') +
-  scale_fill_manual(values = c('#803014', '#148068')) +
+  scale_fill_manual(values = c('#A4D1CA', '#148068')) +
   scale_y_continuous(expand = c(0, 0)) +
   facet_wrap(~Territorio) +
   theme(legend.position = 'bottom',
@@ -216,7 +216,7 @@ girafe(ggobj = etadf |>
   coord_flip() +
   labs(title = 'Indici di indipendenza',
        caption = 'Dati Demo.Istat') +
-  scale_fill_manual(values = c('#803014', '#148068')) +
+  scale_fill_manual(values = c('#A4D1CA', '#148068')) +
   scale_y_continuous(expand = c(0, 0)) +
   facet_wrap(~Territorio) +
   theme(legend.position = 'bottom',
@@ -242,7 +242,7 @@ girafe(ggobj = etadf |>
          opts_toolbar(hidden = c('selection', 'zoom', 'misc'))))
 ```
 
-Un'ultima considerazione, interessante se non altro altro a titolo di curiosità, riguarda il rapporto di mascolinità: se è vero che questi cresce quando calcolato sull'interezza della popolazione italiana, bisogna osservare come rimanga sostanzialmente stabile a livello regionale. Il motivo potrebbe essere la maggiore inerzia di una popolazione particolarmente anziana.
+Un'ultima considerazione, interessante se non altro altro a titolo di curiosità, riguarda il rapporto di mascolinità: se è vero che cresce quando calcolato sull'interezza della popolazione italiana, bisogna osservare come rimanga sostanzialmente stabile a livello regionale. Il motivo potrebbe essere la maggiore inerzia di una popolazione particolarmente anziana.
 
 ```{r}
 #| label: Indici
@@ -312,7 +312,7 @@ Il bilancio migratorio umbro durante i 22 anni fra il 2002 e il 2024 è generalm
 
 ## Saldi migratori
 
-In generale, l'andamento del saldo migratorio umbro va di pari passo con quello nazionale, caratterizzato da due picchi nel 2003 (in corrispondenza dell'introduzione della legge Bossi-Fini) e nel 2007 (anno di ulteriori sanatorie, contemporanee all'entrata della Romania nell'Unione Europea). È interessante l'avvallamento del saldo migratorio totale fra il 2018 e il 2020, indipendente dal saldo migratorio interno e da quello con l'estero. Il motivo di questo scoppiamento è con tutta probabilità dovuto a problemi definitori e di conteggio: Il saldo migratorio con l'estero non tiene conto di alcuni specifici fenomeni emigratori, su tutti i rimpatri. Nel 2018, per mezzo dei decreti sicurezza, c'è stato un notevole aumento di questo tipo di evento demografico, che potrebbe aver contribuito a causare lo scoppiamento di cui sopra, rientrato solamente nel 2022.
+In generale, l'andamento del saldo migratorio umbro va di pari passo con quello nazionale, caratterizzato da due picchi nel 2003 (in corrispondenza dell'introduzione della legge Bossi-Fini) e nel 2007 (anno di ulteriori sanatorie, contemporanee all'entrata della Romania nell'Unione Europea). È interessante l'avvallamento del saldo migratorio totale fra il 2018 e il 2020, indipendente dal saldo migratorio interno e da quello con l'estero. Il motivo di questo disacoppiamento è con tutta probabilità dovuto a problemi definitori e di conteggio: Il saldo migratorio con l'estero non tiene conto di alcuni specifici fenomeni emigratori, su tutti i rimpatri. Nel 2018, per mezzo dei decreti sicurezza, c'è stato un notevole aumento di questo tipo di evento demografico, che potrebbe aver contribuito a causare il disaccoppiamento di cui sopra, rientrato solamente nel 2022.
 
 ```{r}
 #| label: Migrazione - serie storica
