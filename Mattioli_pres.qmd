@@ -161,7 +161,113 @@ it24gg + um24gg +
         plot.title.position = 'panel')
 ```
 
-## Indici di popolazione
+## Indici di popolazione - 1
+
+::: panel-tabset
+### Età media
+
+```{r}
+#| label: barplot età media
+
+girafe(ggobj = etadf |>
+  mutate(Anno = anno,
+         'Territorio' = geo,
+         'Femmine' = round(etaMed_F, 2),
+         'Maschi' = round(etaMed_M, 2),
+         'Totale' = round(etaMed_Totale, 2),
+         'Giovanile' = round(dipGiov, 2),
+         'Vecchiaia' = round(dipVec, 2),
+         'Complessivo' = round(dip, 2),
+         'Indice di vecchiaia' = round(vec, 2),
+         'Rapporto di mascolinità' = round(rapMasc, 2)
+         ) |> 
+  select(Anno, Territorio, Femmine, Maschi, Totale) |> 
+  pivot_longer(cols = c(Femmine, Maschi, Totale)) |> 
+  ggplot(aes(x = name, y = value, fill = factor(Anno), dataid = value, tooltip = value)) +
+  geom_col_interactive(position = 'dodge', width = .6) +
+  geom_hline(yintercept = 0) +
+  geom_text(aes(y = 2, label = name), hjust = 0, col = 'white') +
+  coord_flip() +
+  labs(caption = 'Dati Demo.Istat') +
+  scale_fill_manual(values = c('#A4D1CA', '#148068')) +
+  scale_y_continuous(expand = c(0, 0)) +
+  facet_wrap(~Territorio) +
+  theme(legend.position = 'bottom',
+        axis.title = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        panel.background = element_blank(),
+        panel.grid = element_line(colour = 'gray90'),
+        legend.title = element_blank(),
+        strip.background = element_blank(),
+        plot.title.position = 'panel',
+        panel.grid.major.x = element_line(color = "#A8BAC4", size = 0.3)),
+  options = list(
+         opts_tooltip(css = 'background-color:white;
+                      color:black;
+                      font-family:Helvetica;
+                      font-style:empty;
+                      padding:8px;
+                      border-radius:10px;
+                      background:rgba(255, 255, 255, 0.8);'),
+         opts_hover(css = ''),
+         opts_hover_inv(css = "opacity:0.3;"),
+         opts_toolbar(hidden = c('selection', 'zoom', 'misc'))))
+```
+
+### Indici di dipendenza
+
+```{r}
+#| label: barplot ind dipendenza
+
+girafe(ggobj = etadf |>
+  mutate(Anno = anno,
+         'Territorio' = geo,
+         'Femmine' = round(etaMed_F, 2),
+         'Maschi' = round(etaMed_M, 2),
+         'Totale' = round(etaMed_Totale, 2),
+         'Giovanile' = round(dipGiov, 2),
+         'Vecchiaia' = round(dipVec, 2),
+         'Complessivo' = round(dip, 2),
+         'Indice di vecchiaia' = round(vec, 2),
+         'Rapporto di mascolinità' = round(rapMasc, 2)
+         ) |> 
+  select(Anno, Territorio, Giovanile, Vecchiaia, Complessivo) |> 
+  pivot_longer(cols = c(Giovanile, Vecchiaia, Complessivo)) |> 
+  ggplot(aes(x = name, y = value, fill = factor(Anno), dataid = value, tooltip = value)) +
+  geom_col_interactive(position = 'dodge', width = .6) +
+  geom_hline(yintercept = 0) +
+  geom_text(aes(y = .02, label = name), hjust = 0, col = 'white') +
+  coord_flip() +
+  labs(caption = 'Dati Demo.Istat') +
+  scale_fill_manual(values = c('#A4D1CA', '#148068')) +
+  scale_y_continuous(expand = c(0, 0)) +
+  facet_wrap(~Territorio) +
+  theme(legend.position = 'bottom',
+        axis.title = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        panel.background = element_blank(),
+        panel.grid = element_line(colour = 'gray90'),
+        legend.title = element_blank(),
+        strip.background = element_blank(),
+        plot.title.position = 'panel',
+        panel.grid.major.x = element_line(color = "#A8BAC4", size = 0.3)),
+  options = list(
+         opts_tooltip(css = 'background-color:white;
+                      color:black;
+                      font-family:Helvetica;
+                      font-style:empty;
+                      padding:8px;
+                      border-radius:10px;
+                      background:rgba(255, 255, 255, 0.8);'),
+         opts_hover(css = ''),
+         opts_hover_inv(css = "opacity:0.3;"),
+         opts_toolbar(hidden = c('selection', 'zoom', 'misc'))))
+```
+:::
+
+## Indici di popolazione - 2
 
 ```{r}
 #| label: Indici
@@ -224,114 +330,6 @@ etadf |>
               row_group.border.top.color = "white"
               )
 ```
-
-## Indici di popolazione - dettaglio
-
-::: panel-tabset
-### Età media
-
-```{r}
-#| label: barplot età media
-
-girafe(ggobj = etadf |>
-  mutate(Anno = anno,
-         'Territorio' = geo,
-         'Femmine' = round(etaMed_F, 2),
-         'Maschi' = round(etaMed_M, 2),
-         'Totale' = round(etaMed_Totale, 2),
-         'Giovanile' = round(dipGiov, 2),
-         'Vecchiaia' = round(dipVec, 2),
-         'Complessivo' = round(dip, 2),
-         'Indice di vecchiaia' = round(vec, 2),
-         'Rapporto di mascolinità' = round(rapMasc, 2)
-         ) |> 
-  select(Anno, Territorio, Femmine, Maschi, Totale) |> 
-  pivot_longer(cols = c(Femmine, Maschi, Totale)) |> 
-  ggplot(aes(x = name, y = value, fill = factor(Anno), dataid = value, tooltip = value)) +
-  geom_col_interactive(position = 'dodge', width = .6) +
-  geom_hline(yintercept = 0) +
-  geom_text(aes(y = 2, label = name), hjust = 0, col = 'white') +
-  coord_flip() +
-  labs(title = 'Età medie',
-       caption = 'Dati Demo.Istat') +
-  scale_fill_manual(values = c('#A4D1CA', '#148068')) +
-  scale_y_continuous(expand = c(0, 0)) +
-  facet_wrap(~Territorio) +
-  theme(legend.position = 'bottom',
-        axis.title = element_blank(),
-        axis.text.y = element_blank(),
-        axis.ticks.y = element_blank(),
-        panel.background = element_blank(),
-        panel.grid = element_line(colour = 'gray90'),
-        legend.title = element_blank(),
-        strip.background = element_blank(),
-        plot.title.position = 'panel',
-        panel.grid.major.x = element_line(color = "#A8BAC4", size = 0.3)),
-  options = list(
-         opts_tooltip(css = 'background-color:white;
-                      color:black;
-                      font-family:Helvetica;
-                      font-style:empty;
-                      padding:8px;
-                      border-radius:10px;
-                      background:rgba(255, 255, 255, 0.8);'),
-         opts_hover(css = ''),
-         opts_hover_inv(css = "opacity:0.3;"),
-         opts_toolbar(hidden = c('selection', 'zoom', 'misc'))))
-```
-
-### Indici di dipendenza
-
-```{r}
-#| label: barplot ind dipendenza
-
-girafe(ggobj = etadf |>
-  mutate(Anno = anno,
-         'Territorio' = geo,
-         'Femmine' = round(etaMed_F, 2),
-         'Maschi' = round(etaMed_M, 2),
-         'Totale' = round(etaMed_Totale, 2),
-         'Giovanile' = round(dipGiov, 2),
-         'Vecchiaia' = round(dipVec, 2),
-         'Complessivo' = round(dip, 2),
-         'Indice di vecchiaia' = round(vec, 2),
-         'Rapporto di mascolinità' = round(rapMasc, 2)
-         ) |> 
-  select(Anno, Territorio, Giovanile, Vecchiaia, Complessivo) |> 
-  pivot_longer(cols = c(Giovanile, Vecchiaia, Complessivo)) |> 
-  ggplot(aes(x = name, y = value, fill = factor(Anno), dataid = value, tooltip = value)) +
-  geom_col_interactive(position = 'dodge', width = .6) +
-  geom_hline(yintercept = 0) +
-  geom_text(aes(y = .02, label = name), hjust = 0, col = 'white') +
-  coord_flip() +
-  labs(title = 'Indici di indipendenza',
-       caption = 'Dati Demo.Istat') +
-  scale_fill_manual(values = c('#A4D1CA', '#148068')) +
-  scale_y_continuous(expand = c(0, 0)) +
-  facet_wrap(~Territorio) +
-  theme(legend.position = 'bottom',
-        axis.title = element_blank(),
-        axis.text.y = element_blank(),
-        axis.ticks.y = element_blank(),
-        panel.background = element_blank(),
-        panel.grid = element_line(colour = 'gray90'),
-        legend.title = element_blank(),
-        strip.background = element_blank(),
-        plot.title.position = 'panel',
-        panel.grid.major.x = element_line(color = "#A8BAC4", size = 0.3)),
-  options = list(
-         opts_tooltip(css = 'background-color:white;
-                      color:black;
-                      font-family:Helvetica;
-                      font-style:empty;
-                      padding:8px;
-                      border-radius:10px;
-                      background:rgba(255, 255, 255, 0.8);'),
-         opts_hover(css = ''),
-         opts_hover_inv(css = "opacity:0.3;"),
-         opts_toolbar(hidden = c('selection', 'zoom', 'misc'))))
-```
-:::
 
 # Migrazioni
 
