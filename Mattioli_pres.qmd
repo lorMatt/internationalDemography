@@ -59,11 +59,12 @@ umbMort <- readRDS('Dati/Export/umbMort.rds')
 ::: incremental
 -   882.015 residenti al 1° gennaio 2019
     -   13,8 per cento di 75 anni e più
--   386.420 famiglie al 31 dicembre 2018
-    -   30 per cento composte da una coppia con figli
-    -   20,1 per cento da persone sole di 60 anni e oltre
--   14,3 per cento delle famiglie e 16,3 per cento degli individui in condizioni di povertà relativa nel 2018
+-   14,3 per cento delle famiglie e 16,3 per cento degli individui in condizioni di [povertà relativa](https://lormatt.github.io/posts/RxR%20Report%20inequality%20and%20poverty/) nel 2018
 :::
+
+## Variabilità interna alla regione
+
+![Fonte: ISTAT, Rilevazione sulla popolazione residente comunale per sesso, anno di nascita e stato civile; Istat, Confini delle unità amministrative e basi territoriali](images/Screenshot%202024-11-24%20alle%2017.18.18.png){alt="Fonte: ISTAT, Rilevazione sulla popolazione residente comunale per sesso, anno di nascita e stato civile; Istat, Confini delle unità amministrative e basi territoriali"}
 
 # Analisi della struttura per età
 
