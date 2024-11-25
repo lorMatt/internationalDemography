@@ -6,6 +6,7 @@ format:
     code-tools: true
     self-contained: true
     code-fold: true
+    theme: [default, custom.scss]
     scrollable: true
     transition: slide
     footer: 'Umbria - indicatori demografici'
@@ -64,7 +65,7 @@ umbMort <- readRDS('Dati/Export/umbMort.rds')
 
 ## Variabilità interna alla regione
 
-![Fonte: ISTAT, Rilevazione sulla popolazione residente comunale per sesso, anno di nascita e stato civile; Istat, Confini delle unità amministrative e basi territoriali](images/Screenshot%202024-11-24%20alle%2017.18.18.png){alt="Fonte: ISTAT, Rilevazione sulla popolazione residente comunale per sesso, anno di nascita e stato civile; Istat, Confini delle unità amministrative e basi territoriali"}
+![Fonte: ISTAT, Rilevazione sulla popolazione residente comunale per sesso, anno di nascita e stato civile; Istat, Confini delle unità amministrative e basi territoriali](images/Screenshot%202024-11-24%20alle%2017.18.18.png)
 
 # Analisi della struttura per età
 
@@ -224,7 +225,10 @@ etadf |>
               )
 ```
 
-## Età media
+## Indici di popolazione - dettaglio
+
+::: panel-tabset
+### Età media
 
 ```{r}
 #| label: barplot età media
@@ -276,7 +280,7 @@ girafe(ggobj = etadf |>
          opts_toolbar(hidden = c('selection', 'zoom', 'misc'))))
 ```
 
-## Indici di dipendenza
+### Indici di dipendenza
 
 ```{r}
 #| label: barplot ind dipendenza
@@ -327,6 +331,7 @@ girafe(ggobj = etadf |>
          opts_hover_inv(css = "opacity:0.3;"),
          opts_toolbar(hidden = c('selection', 'zoom', 'misc'))))
 ```
+:::
 
 # Migrazioni
 
