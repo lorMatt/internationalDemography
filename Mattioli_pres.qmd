@@ -1,6 +1,8 @@
 ---
 title: "Umbria"
 subtitle: 'Principali indicatori demografici'
+toc: true
+toc-depth: 1
 format:
   revealjs:
     code-tools: true
@@ -69,7 +71,10 @@ umbMort <- readRDS('Dati/Export/umbMort.rds')
 
 # Analisi della struttura per età
 
-## Piramidi delle età - 2000
+## Piramidi delle età
+
+::: panel-tabset
+### 2000
 
 ```{r}
 #| label: Piramidi delle età 2000
@@ -126,8 +131,7 @@ um00gg <- um00 |>
 ## Patchwork ----
 it00gg + um00gg +
   plot_layout(guides = 'collect', axes = 'collect') +
-  plot_annotation(title = 'Piramidi delle età',
-                  caption = 'Dati Demo.Istat',
+  plot_annotation(caption = 'Dati Demo.Istat',
                   theme = theme(plot.title = element_text(size = 18))) &
   theme(legend.position = 'bottom',
         axis.title.x = element_blank(),
@@ -139,7 +143,7 @@ it00gg + um00gg +
         plot.title.position = 'panel')
 ```
 
-## Piramidi delle età - 2024
+### 2024
 
 ```{r}
 #| label: Piramidi delle età 2024
@@ -148,8 +152,7 @@ it00gg + um00gg +
 ## Patchwork ----
 it24gg + um24gg +
   plot_layout(guides = 'collect', axes = 'collect') +
-  plot_annotation(title = 'Piramidi delle età',
-                  caption = 'Dati Demo.Istat',
+  plot_annotation(caption = 'Dati Demo.Istat',
                   theme = theme(plot.title = element_text(size = 18))) &
   theme(legend.position = 'bottom',
         axis.title.x = element_blank(),
@@ -160,6 +163,12 @@ it24gg + um24gg +
         legend.title = element_blank(),
         plot.title.position = 'panel')
 ```
+:::
+
+::: {.notes}
+Regione particolarmente anziana.   
+Forma della piramide lievemente spostata verso le età molto avanzate - sopravvivenza terza età più elevata rispetto alla media ita
+:::
 
 ## Indici di popolazione - 1
 
@@ -186,16 +195,16 @@ girafe(ggobj = etadf |>
   ggplot(aes(x = name, y = value, fill = factor(Anno), dataid = value, tooltip = value)) +
   geom_col_interactive(position = 'dodge', width = .6) +
   geom_hline(yintercept = 0) +
-  geom_text(aes(y = 2, label = name), hjust = 0, col = 'white') +
-  coord_flip() +
+  # geom_text(aes(y = 2, label = name), hjust = 0, col = 'white') +
+  # coord_flip() +
   labs(caption = 'Dati Demo.Istat') +
   scale_fill_manual(values = c('#A4D1CA', '#148068')) +
   scale_y_continuous(expand = c(0, 0)) +
   facet_wrap(~Territorio) +
   theme(legend.position = 'bottom',
         axis.title = element_blank(),
-        axis.text.y = element_blank(),
-        axis.ticks.y = element_blank(),
+        # axis.text.y = element_blank(),
+        # axis.ticks.y = element_blank(),
         panel.background = element_blank(),
         panel.grid = element_line(colour = 'gray90'),
         legend.title = element_blank(),
@@ -237,16 +246,16 @@ girafe(ggobj = etadf |>
   ggplot(aes(x = name, y = value, fill = factor(Anno), dataid = value, tooltip = value)) +
   geom_col_interactive(position = 'dodge', width = .6) +
   geom_hline(yintercept = 0) +
-  geom_text(aes(y = .02, label = name), hjust = 0, col = 'white') +
-  coord_flip() +
+  # geom_text(aes(y = .02, label = name), hjust = 0, col = 'white') +
+  # coord_flip() +
   labs(caption = 'Dati Demo.Istat') +
   scale_fill_manual(values = c('#A4D1CA', '#148068')) +
   scale_y_continuous(expand = c(0, 0)) +
   facet_wrap(~Territorio) +
   theme(legend.position = 'bottom',
         axis.title = element_blank(),
-        axis.text.y = element_blank(),
-        axis.ticks.y = element_blank(),
+        # axis.text.y = element_blank(),
+        # axis.ticks.y = element_blank(),
         panel.background = element_blank(),
         panel.grid = element_line(colour = 'gray90'),
         legend.title = element_blank(),
@@ -265,6 +274,13 @@ girafe(ggobj = etadf |>
          opts_hover_inv(css = "opacity:0.3;"),
          opts_toolbar(hidden = c('selection', 'zoom', 'misc'))))
 ```
+:::
+
+
+::: {.notes}
+l'Umbria raggiunta dal resto del Paese - diminuzione della distanza tra valori medi totali 2,78 -> 1,55 anni.    
+
+Indici di dipendenza: giovanile più basso sia nel 2000 che nel 2024, vecchiaia sempre superiore a popolazione nazionale
 :::
 
 ## Indici di popolazione - 2
@@ -331,6 +347,12 @@ etadf |>
               )
 ```
 
+::: {.notes}
+
+rapporto di mascolinità: sostanzialmente stabile a livello regionale. Maggiore inerzia di una popolazione particolarmente anziana.
+
+:::
+
 # Migrazioni
 
 ## Saldi migratori
@@ -355,8 +377,7 @@ girafe(ggobj = inddf |>
   scale_color_manual(values = c('#803014', '#148068')) +
   scale_linetype_manual(values = 'dashed') +
   scale_x_continuous(breaks = c(2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024)) +
-  labs(title = 'Saldi migratori',
-       subtitle = 'Serie storica 2002-2023',
+  labs(subtitle = 'Serie storica 2002-2023',
        caption = 'Dati Demo.Istat') +
   facet_wrap(~Territorio) +
   theme(legend.position = 'bottom',
@@ -381,6 +402,14 @@ girafe(ggobj = inddf |>
          opts_hover_inv(css = "opacity:0.3;"),
          opts_toolbar(hidden = c('selection', 'zoom', 'misc'))))
 ```
+
+::: {.notes}
+
+bilancio migratorio umbro durante i 22 anni fra il 2002 e il 2024 generalmente positivo.    
+
+Due picchi nel 2003 (Bossi-Fini) e nel 2007 (sanatorie, Romania UE)
+
+:::
 
 # Fecondità
 
@@ -403,8 +432,7 @@ girafe(ggobj = fecdf |>
   scale_linetype_manual(values = 'dashed') +
   labs(title = 'Tasso di fecondità totale') +
   scale_x_continuous(breaks = c(2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2023)) +
-  labs(title = 'Tasso di fecondità totale',
-       subtitle = 'Serie storica 2002-2023',
+  labs(subtitle = 'Serie storica 2002-2023',
        caption = 'Dati Demo.Istat') +
   facet_wrap(~Territorio) +
   theme(legend.position = 'bottom',
@@ -430,6 +458,14 @@ girafe(ggobj = fecdf |>
 
 ```
 
+::: {.notes}
+
+TFT madri italiane in Umbria partiva nel 2002 da livelli paragonabili a quelli nazionali. L'indicatore sta però calando ad un ritmo più alto rispetto alla media nazionale, configurando un fenomeno di invecchiamento ancora più pronunciato nel medio periodo.
+
+Stessa dinamica per madri straniere, solo con livelli assoluti estremamente più alti.
+
+:::
+
 ## Età media al parto
 
 ```{r}
@@ -448,8 +484,7 @@ girafe(ggobj = fecdf |>
   geom_line(data = ~. |> filter(var != 'Tutte le madri'), aes(col = var)) +
   scale_color_manual(values = c('#803014', '#148068')) +
   scale_linetype_manual(values = 'dashed') +
-  labs(title = 'Età media al parto',
-       subtitle = 'Serie storica 2002-2023') +
+  labs(subtitle = 'Serie storica 2002-2023') +
   scale_x_continuous(breaks = c(2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024)) +
   facet_wrap(~Territorio) +
   theme(legend.position = 'bottom',
@@ -474,7 +509,13 @@ girafe(ggobj = fecdf |>
 
 ```
 
-## TFT - Indici specifici
+::: {.notes}
+
+Fattore più importante è l'età al primo parto. Generalizzata tendenza ad avere figli più tardi, le madri straniere partivano nel 2002 da livelli sensibilmente più bassi di questo indicatore
+
+:::
+
+## TFT - Indici specifici per età
 
 ```{r}
 #| label: 'FX ita/stra'
@@ -487,8 +528,7 @@ girafe(ggobj = FX |>
   facet_wrap(~`Anno di evento`) +
   scale_color_manual(values = c('#803014', '#148068')) +
   scale_linetype_manual(values = 'dashed') +
-  labs(title = 'Tassi specifici di fecondità per età',
-       subtitle = 'Regione Umbria',
+  labs(subtitle = 'Regione Umbria',
        caption = 'Dati Demo.Istat') +
   theme(legend.position = 'bottom',
         panel.background = element_blank(),
@@ -511,6 +551,12 @@ girafe(ggobj = FX |>
          opts_toolbar(hidden = c('selection', 'zoom', 'misc'))))
 ```
 
+::: {.notes}
+
+Chiaramente visibile un avvicinamento fra le due categorie, le due distribuzioni differiscono ancora fortemente per forma e posizione: quella individuata dalle età delle *madri straniere* ha una *media chiaramente minore* e presenta una maggiore curtosi verso destra
+
+:::
+
 # Mortalità
 
 ## Crescita naturale
@@ -527,8 +573,7 @@ girafe(ggobj = inddf |>
   geom_hline(yintercept = 0, col = 'gray60') +
   scale_color_manual(values = c('#803014', '#148068')) +
   scale_linetype_manual(values = 'dashed') +
-  labs(title = 'Mortalità',
-       subtitle = 'Serie storica 2002-2023',
+  labs(subtitle = 'Serie storica 2002-2023',
        caption = 'Dati Demo.Istat') +
   facet_wrap(~Territorio) +
   scale_x_continuous(breaks = c(2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024)) +
@@ -554,6 +599,12 @@ girafe(ggobj = inddf |>
          opts_hover_inv(css = "opacity:0.3;"),
          opts_toolbar(hidden = c('selection', 'zoom', 'misc'))))
 ```
+
+::: {.notes}
+
+Crescita naturale valori nettamente negativi già nel 2002. Valori assoluti più alti nell'Umbria odierna, dove il valore più recente arriva al -7,0.
+
+:::
 
 ## Speranza di vita e probabilità di morte
 
@@ -630,7 +681,13 @@ girafe(ggobj = umbe0 + umbe65 + umbq0 +
          opts_toolbar(hidden = c('selection', 'zoom', 'misc'))))
 ```
 
-## Curva dei sopravviventi per età
+::: {.notes}
+
+Stadio finale del processo di transizione demografica: la speranza di vita alla nascita e a 65 anni cresce fino a stabilizzarsi su livelli molto alti, la probabilità di morte alla nascita crolla sotto al 2,5%
+
+:::
+
+## Curva dei sopravviventi per anno
 
 ```{r}
 #| label: 'Curva sopravviventi anno per anno'
@@ -641,8 +698,7 @@ umbMort |>
   ggplot(aes(x = Età, y = Sopravviventi, linetype = anno, group = anno)) +
   geom_line() +
   facet_wrap(~Sesso) +
-  labs(title = 'Curva di sopravviventi per anno',
-       subtitle = 'Regione Umbria',
+  labs(subtitle = 'Regione Umbria',
        caption = 'Dati Demo.Istat') +
   theme(legend.position = 'bottom',
         plot.title = element_text(size = 18),
@@ -655,3 +711,10 @@ umbMort |>
         axis.ticks = element_blank(),
         axis.title = element_blank())
 ```
+
+::: {.notes}
+
+Sconfitta della mortalità è ulteriormente esemplificata dalla rappresentazione della curva di sopravviventi per anno, che approssima sempre più un rettangolo. Al *diminuire della probabilità di morte* nella terza età, il numero di sopravviventi rimane essenzialmente costante fino a molto tardi. *Le curve sembrano avvicinarsi anno dopo anno ad una sorta di limite naturale della vita umana*, età a cui la probabilità di morte decolla e i sopravviventi diminuiscono drasticamente.
+
+:::
+
