@@ -204,7 +204,7 @@ girafe(ggobj = (etaMedgg / etaMedGt),
          opts_zoom(min = .7, max = 6)))
 
 ## Rapporto di mascolinità ----
-### Umbria ----
+### Umbria tot ----
 rapMasc <- um24 |> 
   filter(Sesso != 'Totale') |> 
   group_by(Sesso) |> 
@@ -226,7 +226,7 @@ rapMasc <- um00 |>
   select(anno, geo, rapMasc) |> 
   bind_rows(rapMasc)
 
-### Italia ----
+### Italia tot ----
 rapMasc <- it24 |> 
   filter(Sesso != 'Totale') |> 
   group_by(Sesso) |> 
@@ -248,6 +248,52 @@ rapMasc <- it00 |>
          geo = 'Italia') |> 
   select(anno, geo, rapMasc) |> 
   bind_rows(rapMasc)
+
+### Umbria 0 ----
+rapMasc0 <-
+  um24 |> 
+  filter(Sesso != 'Totale') |> 
+  filter(Età == 0) |> 
+  rename(pop = `Tot per genere`) |>
+  pivot_wider(names_from = Sesso, values_from = pop) |> 
+  mutate(rapMasc0 = 100*(`M`/`F`),
+         anno = 2024,
+         geo = 'Umbria') |> 
+  select(anno, geo, `rapMasc0`)
+
+rapMasc0 <- um00 |> 
+  filter(Sesso != 'Totale') |> 
+  filter(Età == 0) |> 
+  rename(pop = `2000`) |>
+  pivot_wider(names_from = Sesso, values_from = pop) |> 
+  mutate(rapMasc0 = 100*(`M`/`F`),
+         anno = 2000,
+         geo = 'Umbria') |> 
+  select(anno, geo, `rapMasc0`) |> 
+  bind_rows(rapMasc0)
+
+### Italia 0 ----
+rapMasc0 <- it24 |> 
+  filter(Sesso != 'Totale') |> 
+  filter(Età == 0) |> 
+  rename(pop = `Tot per genere`) |> 
+  pivot_wider(names_from = Sesso, values_from = pop) |> 
+  mutate(rapMasc0 = 100*(`M`/`F`),
+         anno = 2024,
+         geo = 'Italia') |> 
+  select(anno, geo, `rapMasc0`) |> 
+  bind_rows(rapMasc0)
+
+rapMasc0 <- it00 |> 
+  filter(Sesso != 'Totale') |> 
+  filter(Età == 0) |> 
+  rename(pop = `2000`) |> 
+  pivot_wider(names_from = Sesso, values_from = pop) |> 
+  mutate(rapMasc0 = 100*(`M`/`F`),
+         anno = 2000,
+         geo = 'Italia') |> 
+  select(anno, geo, `rapMasc0`) |> 
+  bind_rows(rapMasc0)
 
 ## Indici di dipendenza ----
 
@@ -358,15 +404,15 @@ indDipVec <- it00 |>
 
 #### Umbria
 indVec <- um24 |> 
-  filter(Sesso == 'Totale') |> 
+  filter(Sesso == 'Totale')|>
   summarise(vec = (colSums(um24 |> filter(Sesso == 'Totale' & Età > 64) |> select(`Tot per genere`))/ 
-                     colSums(um24 |> filter(Sesso == 'Totale' & Età < 15) |> select(`Tot per genere`)))) |> 
+                     colSums(um24 |> filter(Sesso == 'Totale' & Età < 15) |> select(`Tot per genere`)))*100) |> 
   mutate(anno = 2024,
          geo = 'Umbria')
 indVec <- um00 |> 
   filter(Sesso == 'Totale') |> 
   summarise(vec = (colSums(um00 |> filter(Sesso == 'Totale' & Età > 64) |> select(`2000`))/
-                     colSums(um00 |> filter(Sesso == 'Totale' & Età < 15) |> select(`2000`)))) |> 
+                     colSums(um00 |> filter(Sesso == 'Totale' & Età < 15) |> select(`2000`)))*100) |> 
   mutate(anno = 2000,
          geo = 'Umbria') |> 
   bind_rows(indVec)
@@ -375,7 +421,7 @@ indVec <- um00 |>
 indVec <- it24 |> 
   filter(Sesso == 'Totale') |> 
   summarise(vec = (colSums(it24 |> filter(Sesso == 'Totale' & Età > 64) |> select(`Tot per genere`)))/
-              colSums(it24 |> filter(Sesso == 'Totale' & Età < 15) |> select(`Tot per genere`))) |> 
+              colSums(it24 |> filter(Sesso == 'Totale' & Età < 15) |> select(`Tot per genere`))*100) |> 
   mutate(anno = 2024,
          geo = 'Italia') |> 
   bind_rows(indVec)
@@ -383,21 +429,25 @@ indVec <- it24 |>
 indVec <- it00 |> 
   filter(Sesso == 'Totale') |> 
   summarise(vec = (colSums(it00 |> filter(Sesso == 'Totale' & Età > 64) |> select(`2000`)))/
-              colSums(it00 |> filter(Sesso == 'Totale' & Età < 15) |> select(`2000`))) |> 
+              colSums(it00 |> filter(Sesso == 'Totale' & Età < 15) |> select(`2000`))*100) |> 
   mutate(anno = 2000,
          geo = 'Italia') |> 
   bind_rows(indVec)
+
+
 
 ## Join ----
 etadf <- full_join(indDip, indDipGiov) |> 
   full_join(indDipVec) |> 
   full_join(indVec) |> 
   full_join(rapMasc) |> 
+  full_join(rapMasc0) |> 
   full_join(etaMed |>
               pivot_wider(names_from = `Sesso`,
                           values_from = etaMed,
                           names_prefix = 'etaMed_')) |> 
-  select(anno, geo, etaMed_F, etaMed_M, etaMed_Totale, dipGiov, dipVec, dip, vec, rapMasc)
+  select(anno, geo, etaMed_F, etaMed_M, etaMed_Totale, dipGiov, dipVec, dip, vec, rapMasc, rapMasc0)
+
 
 ## GT ----
 etadf |>
@@ -410,9 +460,10 @@ etadf |>
          'Vecchiaia' = round(dipVec, 2),
          'Complessivo' = round(dip, 2),
          'Indice di vecchiaia' = round(vec, 2),
-         'Rapporto di mascolinità' = round(rapMasc, 2)
+         'Popolazione' = round(rapMasc, 2),
+         'Età 0' = round(rapMasc0, 2)
   ) |> 
-  select(Territorio, Femmine, Maschi, Totale, Giovanile, Vecchiaia, Complessivo, `Indice di vecchiaia`, `Rapporto di mascolinità`) |> 
+  select(Territorio, Femmine, Maschi, Totale, Giovanile, Vecchiaia, Complessivo, `Indice di vecchiaia`, `Popolazione`, `Età 0`) |> 
   gt(rowname_col = 'Territorio') |> 
   tab_stubhead(
     label = 'Anno'
@@ -437,12 +488,16 @@ etadf |>
     label = 'Indice di dipendenza',
     columns = c(Giovanile, Vecchiaia, `Complessivo`)
   ) |> 
+  tab_spanner(
+    label = 'Rapporto di mascolinità',
+    columns = c(Popolazione, `Età 0`)
+  ) |> 
   tab_source_note(
     source_note = 'Dati Demo.Istat'
   ) |> 
   cols_align(
     align = 'center',
-    columns = 3:9
+    columns = 3:10
   ) |>
   cols_align(
     align = 'left',
