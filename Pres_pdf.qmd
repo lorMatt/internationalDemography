@@ -74,14 +74,10 @@ umPrev <- readRDS('Dati/Export/umPrev.rds')
 #| label: Previsioni di popolazione al 2050
 
 umPrev |> 
-  select(Anno, `Limite inferiore intervallo di confidenza al 90% (5° percentile)`,
-         `Scenario mediano`,
-         `Limite superiore intervallo di confidenza al 90% (95° percentile)`) |> 
-  pivot_longer(cols = !Anno) |> 
-  ggplot(aes(x = Anno, y = value, group = name)) +
-  geom_line(data = ~. |> filter(name == 'Scenario mediano'), linetype = 1) +
-  geom_line(data = ~. |> filter(name == 'Limite inferiore intervallo di confidenza al 90% (5° percentile)'), linetype = 2) +
-  geom_line(data = ~. |> filter(name == 'Limite superiore intervallo di confidenza al 90% (95° percentile)'), linetype = 2) +
+  ggplot(aes(x = Anno)) +
+  geom_ribbon(aes(ymin = `Limite inferiore intervallo di confidenza al 90% (5° percentile)`,
+                  ymax = `Limite superiore intervallo di confidenza al 90% (95° percentile)`), fill = 'gray90') +
+  geom_line(aes(y = `Scenario mediano`), linetype = 1) +
   labs(subtitle = 'Regione Umbria',
        caption = 'Dati Demo.Istat') +
   theme(legend.position = 'bottom',

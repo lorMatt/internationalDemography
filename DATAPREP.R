@@ -585,8 +585,7 @@ umPrev <- read_excel("Dati/Previsioni della popolazione.xlsx",
 umPrev <- umPrev |> 
   select(Anno, `Limite inferiore intervallo di confidenza al 90% (5° percentile)`,
          `Scenario mediano`,
-         `Limite superiore intervallo di confidenza al 90% (95° percentile)`) |> 
-  pivot_longer(cols = !Anno)
+         `Limite superiore intervallo di confidenza al 90% (95° percentile)`)
   
 # Data export ----
 write_rds(umPrev, 'Dati/Export/umPrev.rds')
