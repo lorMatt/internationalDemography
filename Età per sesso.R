@@ -6,12 +6,12 @@ p_load(ggplot2, tidyverse, readxl, patchwork, ggiraph, ggbump, gt)
 ## 2024
 it24 <- read_excel('Dati/Italia - Popolazione residente.xlsx',
                     skip = 1) |> 
-         slice(1:101) |> 
-         as_tibble()     # pop residente Italia
+        slice(1:101) |> 
+        as_tibble()     # pop residente Italia
 um24 <- read_excel("Dati/Umbria - Popolazione residente.xlsx",
                     skip = 1) |> 
-         slice(1:101) |> 
-         as_tibble() # pop residente Umbria
+        slice(1:101) |> 
+        as_tibble() # pop residente Umbria
 
 ## 2000
 it00 <- read_excel('Dati/Italia - Ricostruzione intercensuaria della popolazione 1992-2001.xlsx',
@@ -21,7 +21,7 @@ it00 <- read_excel('Dati/Italia - Ricostruzione intercensuaria della popolazione
   as_tibble()     # pop ricostruita Italia
 
 um00 <- read_excel('Dati/Umbria - Ricostruzione intercensuaria della popolazione 1992-2001.xlsx',
-                   skip = 1) |>
+                  skip = 1) |>
   select(1:2 | '2000') |> 
   slice(1:303) |> 
   as_tibble()     # pop ricostruita Italia
@@ -29,13 +29,13 @@ um00 <- read_excel('Dati/Umbria - Ricostruzione intercensuaria della popolazione
 ## data cleaning ----
 it24 <-  it24 |> 
   rename('M' = `Totale maschi`,
-             'F' = `Totale femmine`) |> 
+            'F' = `Totale femmine`) |> 
   pivot_longer(cols = c('M', 'F', Totale), names_to = 'Sesso', values_to = 'Tot per genere') |> # long form
   mutate(Età = as.numeric(case_match(Età, '100 e oltre' ~ '100', .default = Età)))
 
 um24 <-  um24 |> 
   rename('M' = `Totale maschi`,
-         'F' = `Totale femmine`) |> 
+        'F' = `Totale femmine`) |> 
   pivot_longer(cols = c('M', 'F', Totale), names_to = 'Sesso', values_to = 'Tot per genere') |>  # long form
   mutate(Età = as.numeric(case_match(Età, '100 e oltre' ~ '100', .default = Età)))
 
